@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Legacy Honor 911</title>
+  <title>Legacy Honor 911 | Remember. Honor. Preserve.</title>
+
+  <meta name="description" content="Legacy Honor 911 is an independent educational, historical, and memorial project preserving the professional legacies of individuals who were working in the World Trade Center on September 11, 2001.">
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -25,6 +31,9 @@
       border-bottom: 1px solid #9b7b32;
       padding: 28px 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     header h1 {
@@ -40,24 +49,46 @@
       letter-spacing: 1px;
     }
 
+    nav {
+      margin-top: 18px;
+    }
+
+    nav a {
+      color: #bdb9ad;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #d6b35a;
+    }
+
     .hero {
       max-width: 1000px;
       margin: auto;
-      padding: 70px 20px 50px;
+      padding: 80px 20px 55px;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       color: #f0ead8;
       margin-bottom: 18px;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 780px;
       margin: auto;
       color: #b9b7b0;
       font-size: 1.1rem;
+    }
+
+    .hero .subtext {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #8f8d87;
     }
 
     .gold-line {
@@ -83,7 +114,7 @@
     .section-intro {
       text-align: center;
       color: #aaa;
-      max-width: 750px;
+      max-width: 780px;
       margin: 0 auto 35px;
     }
 
@@ -98,7 +129,7 @@
       border: 1px solid #292f38;
       border-top: 3px solid #9b7b32;
       padding: 24px;
-      min-height: 190px;
+      min-height: 205px;
       transition: transform 0.2s, border-color 0.2s;
     }
 
@@ -131,11 +162,35 @@
       font-size: 0.92rem;
     }
 
+    .about {
+      background: #0b0f16;
+      border-top: 1px solid #292f38;
+      border-bottom: 1px solid #292f38;
+      padding: 65px 20px;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #d6b35a;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .about p {
+      color: #b8b6af;
+      margin-bottom: 18px;
+    }
+
     .mission {
       background: #0c1119;
       border-top: 1px solid #292f38;
       border-bottom: 1px solid #292f38;
-      padding: 60px 20px;
+      padding: 65px 20px;
       text-align: center;
     }
 
@@ -151,6 +206,137 @@
 
     .mission p {
       color: #b8b6af;
+      margin-bottom: 15px;
+    }
+
+    .disclaimer {
+      background: #080b10;
+      border-top: 1px solid #292f38;
+      border-bottom: 1px solid #292f38;
+      padding: 55px 20px;
+    }
+
+    .disclaimer-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .disclaimer h2 {
+      text-align: center;
+      color: #d6b35a;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    .disclaimer p {
+      color: #96958f;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .token {
+      background: #0c1119;
+      border-top: 1px solid #9b7b32;
+      border-bottom: 1px solid #9b7b32;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .token-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .token h2 {
+      color: #d6b35a;
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+    }
+
+    .token-name {
+      color: #f0ead8;
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+
+    .token p {
+      color: #b8b6af;
+      margin-bottom: 18px;
+    }
+
+    .token-symbol {
+      display: inline-block;
+      border: 1px solid #9b7b32;
+      padding: 10px 22px;
+      margin: 15px 0 22px;
+      color: #d6b35a;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .token-note {
+      color: #85847e;
+      font-size: 0.88rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .links {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .links h2 {
+      color: #d6b35a;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .link-box {
+      background: #10151d;
+      border: 1px solid #292f38;
+      padding: 18px;
+    }
+
+    .link-box strong {
+      display: block;
+      color: #eee8d7;
+      margin-bottom: 5px;
+    }
+
+    .link-box span {
+      color: #777;
+      font-size: 0.88rem;
+    }
+
+    .security {
+      background: #090c11;
+      border-top: 1px solid #292f38;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .security-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .security h2 {
+      color: #d6b35a;
+      margin-bottom: 15px;
+    }
+
+    .security p {
+      color: #999;
+      font-size: 0.92rem;
     }
 
     footer {
@@ -158,6 +344,25 @@
       padding: 35px 20px;
       color: #777;
       font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #aaa;
+    }
+
+    @media (max-width: 650px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 7px;
+      }
     }
   </style>
 </head>
@@ -167,28 +372,47 @@
 <header>
   <h1>LEGACY HONOR 911</h1>
   <p>Remember. Honor. Preserve.</p>
+
+  <nav>
+    <a href="#legacies">The Ten</a>
+    <a href="#about">About</a>
+    <a href="#mission">Mission</a>
+    <a href="#disclaimer">Important Notice</a>
+    <a href="#token">$LHR911</a>
+    <a href="#links">Official Links</a>
+  </nav>
 </header>
 
+
 <section class="hero">
+
   <h2>Ten Professional Legacies</h2>
 
   <div class="gold-line"></div>
 
   <p>
-    Remembering the men and women who worked in the World Trade Center
-    and whose professional lives helped shape American commerce,
-    finance, business, and industry.
+    Remembering individuals who were working in the World Trade Center
+    on September 11, 2001, and whose professional lives contributed to
+    American commerce, finance, business, and industry.
   </p>
+
+  <p class="subtext">
+    Their lives were more than a moment in history. Their work, leadership,
+    ambitions, and accomplishments deserve to be remembered.
+  </p>
+
 </section>
 
-<section class="section">
+
+<section class="section" id="legacies">
 
   <h2 class="section-title">The Ten</h2>
 
   <p class="section-intro">
-    This collection preserves the professional achievements,
-    careers, leadership, and ambitions of ten individuals who were
-    working in the World Trade Center on September 11, 2001.
+    Legacy Honor 911 presents ten documented professional legacies as an
+    initial independent memorial collection. The selection focuses on
+    professional accomplishment, leadership, responsibility, entrepreneurship,
+    and influence during their lives and careers.
   </p>
 
   <div class="legacies">
@@ -197,94 +421,330 @@
       <div class="number">01</div>
       <h3>David D. Alger</h3>
       <div class="position">President — Fred Alger Management</div>
-      <p>Investment management and business leadership.</p>
+      <p>
+        Investment management, business ownership, organizational leadership,
+        and growth of a major financial enterprise.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">02</div>
       <h3>Joseph J. Berry</h3>
       <div class="position">Co-CEO — Keefe, Bruyette & Woods</div>
-      <p>Leadership in financial services and investment banking.</p>
+      <p>
+        Leadership in financial services, investment banking, and the
+        specialized financial-services sector.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">03</div>
       <h3>David S. Berry</h3>
       <div class="position">Chief of Research — Keefe, Bruyette & Woods</div>
-      <p>Financial research and securities expertise.</p>
+      <p>
+        Financial research, securities analysis, industry expertise,
+        and professional leadership.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">04</div>
       <h3>Jeffrey Marc Chairnoff</h3>
       <div class="position">Managing Director — Sandler O'Neill</div>
-      <p>Mortgage finance and investment banking.</p>
+      <p>
+        Mortgage finance, investment banking, financial markets,
+        and senior professional leadership.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">05</div>
       <h3>Martin Wohlforth</h3>
       <div class="position">Managing Director — Sandler O'Neill</div>
-      <p>Investment banking and financial services.</p>
+      <p>
+        Investment banking, financial services, client relationships,
+        and executive-level professional leadership.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">06</div>
       <h3>Eamon J. McEneaney</h3>
       <div class="position">Senior Vice President & Limited Partner — Cantor Fitzgerald</div>
-      <p>Financial markets and institutional leadership.</p>
+      <p>
+        Financial markets, institutional relationships, partnership,
+        and leadership within a major financial firm.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">07</div>
       <h3>John Thomas McErlean Jr.</h3>
       <div class="position">Vice President & Partner — Cantor Fitzgerald</div>
-      <p>Financial markets and partnership leadership.</p>
+      <p>
+        Financial markets, partnership leadership, and professional
+        contribution within the securities industry.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">08</div>
       <h3>Jason David Cayne</h3>
       <div class="position">Municipal Bond Broker & Partner — Cantor Fitzgerald</div>
-      <p>Municipal finance and securities markets.</p>
+      <p>
+        Municipal finance, securities markets, brokerage, and
+        partnership leadership.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">09</div>
       <h3>Farrell Peter Lynch</h3>
       <div class="position">Partner — Cantor Fitzgerald</div>
-      <p>Financial markets and partnership leadership.</p>
+      <p>
+        Financial markets, securities business, partnership, and
+        professional leadership.
+      </p>
     </div>
 
     <div class="legacy">
       <div class="number">10</div>
       <h3>Charles A. Zion</h3>
       <div class="position">Senior Vice President & Equities Trader — Cantor Fitzgerald</div>
-      <p>Equities trading and financial markets.</p>
+      <p>
+        Equities trading, securities markets, and senior professional
+        responsibility.
+      </p>
     </div>
 
   </div>
+
 </section>
 
-<section class="mission">
 
-  <div class="mission-inner">
+<section class="about" id="about">
 
-    <h2>Our Mission</h2>
+  <div class="about-inner">
+
+    <h2>Why Professional Legacy?</h2>
 
     <p>
-      Legacy Honor 911 exists to preserve the professional legacies
-      of those who were lost, to remember the lives behind the names,
-      and to ensure that their accomplishments are not forgotten.
+      Every person remembered here was more than a name, a photograph,
+      or a statistic. Each had a career, responsibilities, relationships,
+      ambitions, and accomplishments.
+    </p>
+
+    <p>
+      Legacy Honor 911 focuses on professional legacy because the work
+      people dedicate their lives to can tell an important part of their
+      story. Leadership, entrepreneurship, expertise, and achievement
+      become part of the history they leave behind.
+    </p>
+
+    <p>
+      This collection is not intended to rank the value of human lives.
+      It is an independent historical project recognizing ten professional
+      legacies and preserving their stories for future generations.
     </p>
 
   </div>
 
 </section>
 
+
+<section class="mission" id="mission">
+
+  <div class="mission-inner">
+
+    <h2>Our Mission</h2>
+
+    <p>
+      Legacy Honor 911 exists to preserve professional legacies,
+      remember the lives behind the names, and ensure that accomplishments
+      are not forgotten.
+    </p>
+
+    <p>
+      We believe remembrance should extend beyond a single date.
+      It should preserve the stories of who these people were,
+      what they accomplished, and the lives they were building.
+    </p>
+
+    <p>
+      As this project develops, our goal is to create a lasting digital
+      memorial and community dedicated to remembrance, education,
+      historical preservation, and responsible stewardship.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="disclaimer" id="disclaimer">
+
+  <div class="disclaimer-inner">
+
+    <h2>Important Notice</h2>
+
+    <p>
+      Legacy Honor 911 is an independent educational, historical, and
+      memorial project. It is not affiliated with, sponsored by, endorsed
+      by, or officially representing the families, estates, employers, or
+      organizations associated with the individuals presented on this
+      website unless expressly stated otherwise.
+    </p>
+
+    <p>
+      The individuals featured in this initial collection were selected
+      based on publicly documented professional accomplishments, leadership,
+      business responsibility, career history, and professional prominence.
+      This selection is not intended to rank the value or importance of
+      human lives, and inclusion should not be interpreted as suggesting
+      that these individuals were more important than anyone else who was
+      lost on September 11, 2001.
+    </p>
+
+    <p>
+      Information presented here is intended primarily for educational,
+      historical, and memorial purposes. Legacy Honor 911 seeks to use
+      reputable publicly available sources and to correct material factual
+      errors when they are identified.
+    </p>
+
+    <p>
+      The Legacy Honor Token ($LHR911) is a separate digital community and
+      memecoin project associated with Legacy Honor 911. The project is
+      intended, in part, to provide potential business revenue to its
+      creator and to help fund the continued development, maintenance,
+      operation, and expansion of the Legacy Honor 911 project.
+    </p>
+
+    <p>
+      $LHR911 is not a charitable donation, an investment guarantee, or a
+      promise of financial return. Cryptocurrency assets are highly
+      speculative and may lose some or all of their value. Nothing on this
+      website should be interpreted as financial, investment, legal, or tax
+      advice.
+    </p>
+
+    <p>
+      Legacy Honor 911 may pursue charitable giving or other legitimate
+      assistance for 9/11 survivors and affected communities in the future.
+      However, no charitable contribution or survivor benefit should be
+      implied unless and until an appropriate charitable structure,
+      recipient organization, or other legitimate mechanism has actually
+      been established and publicly identified.
+    </p>
+
+    <p>
+      Legacy Honor 911 will never request a visitor's seed phrase, private
+      key, wallet password, or security codes. Always verify official
+      project information and the official $LHR911 contract address through
+      this website before interacting with the token.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="token" id="token">
+
+  <div class="token-inner">
+
+    <h2>Legacy Honor Token</h2>
+
+    <div class="token-name">$LHR911</div>
+
+    <div class="token-symbol">LHR911</div>
+
+    <p>
+      $LHR911 is the digital token associated with the Legacy Honor 911
+      project and its growing community.
+    </p>
+
+    <p>
+      The token is intended to help build an active community around the
+      Legacy Honor 911 project while providing a potential source of
+      business revenue to support the development, maintenance, and
+      expansion of the project.
+    </p>
+
+    <p class="token-note">
+      $LHR911 is not presented as a guaranteed investment, does not
+      guarantee profits, and should never be purchased based solely on
+      expectations of financial return. Cryptocurrency involves substantial
+      risk, and individuals should make their own informed decisions.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="links" id="links">
+
+  <h2>Official Links</h2>
+
+  <div class="link-grid">
+
+    <div class="link-box">
+      <strong>Official Website</strong>
+      <span>This website</span>
+    </div>
+
+    <div class="link-box">
+      <strong>Official X Account</strong>
+      <span>Coming soon</span>
+    </div>
+
+    <div class="link-box">
+      <strong>Official Community</strong>
+      <span>Future community channels will be announced here</span>
+    </div>
+
+    <div class="link-box">
+      <strong>$LHR911 Token</strong>
+      <span>Official token page will be published here at launch</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="security">
+
+  <div class="security-inner">
+
+    <h2>Protect Yourself From Impersonators</h2>
+
+    <p>
+      Legacy Honor 911 will never ask you for your seed phrase, private key,
+      wallet password, or security codes. Never send cryptocurrency to an
+      individual claiming to represent Legacy Honor 911 through an unsolicited
+      message.
+    </p>
+
+    <p style="margin-top: 12px;">
+      Always verify official links and the official $LHR911 contract address
+      through this website before interacting with the token.
+    </p>
+
+  </div>
+
+</section>
+
+
 <footer>
-  Legacy Honor 911<br>
-  Remember. Honor. Preserve.
+
+  <strong>LEGACY HONOR 911</strong><br>
+  Remember. Honor. Preserve.<br><br>
+
+  An independent educational, historical, and memorial project dedicated
+  to preserving professional legacies and remembering the lives behind them.
+
 </footer>
 
 </body>
