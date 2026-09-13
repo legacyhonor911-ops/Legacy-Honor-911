@@ -4,1574 +4,1104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Legacy Honor 911 | Remember. Honor. Preserve.</title>
-
-<meta name="description" content="Legacy Honor 911 is an independent educational, historical, and memorial project preserving professional legacies connected with September 11, 2001.">
+<title>Legacy Honor 911</title>
 
 <style>
-:root{
-    --black:#05070b;
-    --navy:#0b111b;
-    --navy2:#111b2a;
-    --gold:#d6b35a;
-    --gold-light:#ecd58e;
-    --gold-dark:#8e702d;
-    --white:#eeeae0;
-    --muted:#aaa79d;
-    --line:rgba(214,179,90,.28);
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:
-        radial-gradient(circle at 50% 0%,#131c2a 0%,#07090d 48%,#05070b 100%);
-    color:var(--white);
-    font-family:Georgia,"Times New Roman",serif;
-    line-height:1.7;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button{
-    font-family:inherit;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(4,6,10,.94);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
-}
-
-.nav{
-    max-width:1200px;
-    margin:auto;
-    padding:13px 22px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    color:var(--gold);
-    font-weight:bold;
-    letter-spacing:2px;
-    white-space:nowrap;
-}
-
-.brand-mark{
-    width:31px;
-    height:31px;
-    border:1px solid var(--gold-dark);
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-    gap:3px;
-    padding:5px;
-}
-
-.brand-mark span{
-    width:5px;
-    background:var(--gold);
-}
-
-.brand-mark span:nth-child(1){height:12px;}
-.brand-mark span:nth-child(2){height:20px;}
-.brand-mark span:nth-child(3){height:15px;}
-
-.nav-links{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-}
-
-.nav-links a{
-    color:#c4c0b6;
-    font-size:.82rem;
-    letter-spacing:1px;
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:var(--gold);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    position:relative;
-    min-height:760px;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-    background:#080b10;
-}
-
-/* The artwork now gets the visual priority. */
-.hero-image{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-    opacity:.88;
-    filter:brightness(1.08) contrast(1.03) saturate(.88);
-}
-
-/*
-   Instead of covering the whole picture with black,
-   this gradient keeps the upper artwork visible and
-   creates darkness primarily where the website text lives.
-*/
-.hero-shade{
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(3,6,10,.04) 0%,
-            rgba(3,6,10,.03) 35%,
-            rgba(3,6,10,.22) 53%,
-            rgba(3,6,10,.78) 82%,
-            rgba(3,6,10,.97) 100%
-        );
-}
-
-/* subtle edge treatment */
-.hero-edge{
-    position:absolute;
-    inset:0;
-    box-shadow:
-        inset 0 0 100px rgba(0,0,0,.25),
-        inset 0 -80px 100px rgba(0,0,0,.55);
-    pointer-events:none;
-}
-
-.hero-content{
-    position:absolute;
-    z-index:5;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:70px 25px 55px;
-    text-align:center;
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(5,7,11,.12) 10%,
-            rgba(5,7,11,.74) 42%,
-            rgba(5,7,11,.96) 100%
-        );
-}
-
-.hero-title{
-    display:inline-block;
-    padding:8px 25px 4px;
-    border-top:1px solid rgba(214,179,90,.65);
-    border-bottom:1px solid rgba(214,179,90,.65);
-    background:rgba(5,7,11,.58);
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
-}
-
-.hero h1{
-    color:var(--gold-light);
-    font-size:clamp(2.4rem,6vw,5.2rem);
-    line-height:1;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    text-shadow:0 3px 15px #000;
-}
-
-.hero .motto{
-    margin-top:17px;
-    color:#f0ece1;
-    font-size:clamp(.9rem,2vw,1.25rem);
-    letter-spacing:5px;
-    text-transform:uppercase;
-    text-shadow:0 2px 8px #000;
-}
-
-.hero-description{
-    max-width:760px;
-    margin:18px auto 25px;
-    color:#d0ccc2;
-    font-size:1rem;
-    text-shadow:0 2px 7px #000;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:11px;
-}
-
-.btn{
-    display:inline-block;
-    padding:10px 19px;
-    border:1px solid var(--gold-dark);
-    background:rgba(5,7,11,.84);
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:1.4px;
-    font-size:.73rem;
-    cursor:pointer;
-    transition:.22s;
-}
-
-.btn:hover{
-    background:var(--gold);
-    color:#080a0e;
-    border-color:var(--gold);
-}
-
-.btn.primary{
-    background:var(--gold);
-    color:#080a0e;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section{
-    max-width:1200px;
-    margin:auto;
-    padding:85px 22px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:48px;
-}
-
-.eyebrow{
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:.72rem;
-    margin-bottom:9px;
-}
-
-.section-title h2{
-    color:var(--white);
-    font-size:clamp(2rem,4vw,3rem);
-    line-height:1.2;
-}
-
-.section-title p{
-    max-width:720px;
-    margin:15px auto 0;
-    color:var(--muted);
-}
-
-.divider{
-    width:160px;
-    height:1px;
-    margin:24px auto;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-
-/* =========================
-   LEGACIES
-========================= */
-
-.legacy-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(275px,1fr));
-    gap:20px;
-}
-
-.legacy-card{
-    position:relative;
-    padding:28px;
-    min-height:275px;
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-    border:1px solid rgba(214,179,90,.23);
-    transition:.25s;
-    overflow:hidden;
-}
-
-.legacy-card:hover{
-    transform:translateY(-4px);
-    border-color:rgba(214,179,90,.62);
-    box-shadow:0 18px 45px rgba(0,0,0,.35);
-}
-
-.legacy-card:before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:3px;
-    height:100%;
-    background:linear-gradient(var(--gold),transparent);
-}
-
-.legacy-number{
-    color:var(--gold-dark);
-    font-size:.7rem;
-    letter-spacing:3px;
-    margin-bottom:7px;
-}
-
-.legacy-card h3{
-    color:var(--gold);
-    font-size:1.3rem;
-    line-height:1.3;
-}
-
-.position{
-    color:#bdb9ae;
-    font-size:.87rem;
-    margin:7px 0 15px;
-}
-
-.legacy-card p{
-    color:#aaa79e;
-    font-size:.9rem;
-    margin-bottom:19px;
-}
-
-.profile-button{
-    border:0;
-    border-top:1px solid rgba(214,179,90,.23);
-    background:none;
-    color:var(--gold);
-    padding-top:11px;
-    cursor:pointer;
-    font-size:.7rem;
-    letter-spacing:1.4px;
-    text-transform:uppercase;
-}
-
-.profile-button:hover{
-    color:var(--gold-light);
-}
-
-/* =========================
-   MEMORIAL GRAPHIC
-========================= */
-
-.memorial-graphic{
-    max-width:650px;
-    margin:65px auto 0;
-    text-align:center;
-}
-
-.towers{
-    height:170px;
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    gap:30px;
-}
-
-.tower{
-    width:78px;
-    border:1px solid rgba(214,179,90,.45);
-    background:
-        repeating-linear-gradient(
-            90deg,
-            rgba(214,179,90,.16) 0,
-            rgba(214,179,90,.16) 3px,
-            transparent 3px,
-            transparent 10px
-        );
-    position:relative;
-}
-
-.tower:nth-child(1){
-    height:125px;
-}
-
-.tower:nth-child(2){
-    height:158px;
-}
-
-.tower:before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:-27px;
-    width:1px;
-    height:27px;
-    background:var(--gold);
-}
-
-.memorial-caption{
-    margin-top:23px;
-    color:var(--gold-dark);
-    letter-spacing:4px;
-    font-size:.65rem;
-}
-
-/* =========================
-   MISSION
-========================= */
-
-.mission{
-    border-top:1px solid rgba(214,179,90,.13);
-    border-bottom:1px solid rgba(214,179,90,.13);
-    background:rgba(255,255,255,.018);
-}
-
-.mission-box{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-.mission-box p{
-    color:#c0bcb1;
-    font-size:1.04rem;
-    margin-bottom:20px;
-}
-
-/* =========================
-   TOKEN
-========================= */
-
-.token-section{
-    background:
-        radial-gradient(circle at 50% 50%,rgba(214,179,90,.075),transparent 45%);
-}
-
-.token-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.coin-area{
-    display:flex;
-    justify-content:center;
-}
-
-.coin{
-    width:270px;
-    height:270px;
-    border-radius:50%;
-    background:
-        radial-gradient(circle at 32% 25%,
-            #f6dfa0 0,
-            #c09b49 32%,
-            #806125 61%,
-            #30230d 100%);
-    border:9px double #b99343;
-    box-shadow:
-        0 0 0 5px #17130a,
-        0 0 0 7px #806226,
-        0 25px 70px rgba(0,0,0,.65);
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.coin:before{
-    content:"";
-    position:absolute;
-    inset:18px;
-    border:1px solid rgba(255,246,207,.55);
-    border-radius:50%;
-}
-
-.coin-top{
-    position:absolute;
-    top:47px;
-    left:0;
-    right:0;
-    text-align:center;
-    font-size:.52rem;
-    letter-spacing:2px;
-    color:#201704;
-}
-
-.coin-center{
-    color:#171104;
-    text-align:center;
-    font-weight:bold;
-}
-
-.coin-center strong{
-    display:block;
-    font-size:2.6rem;
-    letter-spacing:2px;
-}
-
-.coin-center span{
-    font-size:.62rem;
-    letter-spacing:3px;
-}
-
-.token-copy h2{
-    color:var(--gold);
-    font-size:2rem;
-    line-height:1.25;
-    margin-bottom:18px;
-}
-
-.token-copy p{
-    color:#b5b1a6;
-    margin-bottom:17px;
-}
-
-.token-status{
-    margin:22px 0;
-    padding:14px 18px;
-    border-left:2px solid var(--gold);
-    background:rgba(214,179,90,.045);
-    color:#c7c2b7;
-    font-size:.88rem;
-}
-
-/* =========================
-   DISCLAIMER
-========================= */
-
-.disclaimer{
-    max-width:950px;
-    margin:auto;
-    padding:30px;
-    border:1px solid rgba(214,179,90,.3);
-    background:rgba(214,179,90,.035);
-}
-
-.disclaimer h3{
-    color:var(--gold);
-    font-size:1rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:15px;
-}
-
-.disclaimer p{
-    color:#aaa79e;
-    font-size:.88rem;
-    margin-bottom:12px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-box{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-}
-
-.contact-box p{
-    color:#aaa79e;
-}
-
-.email{
-    display:inline-block;
-    margin:17px 0 25px;
-    color:var(--gold);
-    border-bottom:1px solid var(--gold-dark);
-    font-size:1.08rem;
-}
-
-/* =========================
-   SECURITY
-========================= */
-
-.security{
-    background:#04060a;
-    border-top:1px solid rgba(214,179,90,.13);
-}
-
-.security-box{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-.security-box h3{
-    color:#d3cdbc;
-    margin-bottom:10px;
-}
-
-.security-box p{
-    color:#85827a;
-    font-size:.82rem;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    padding:35px 22px;
-    text-align:center;
-    color:#706e68;
-    font-size:.75rem;
-    border-top:1px solid var(--line);
-}
-
-footer strong{
-    color:var(--gold-dark);
-}
-
-/* =========================
-   PROFILE MODAL
-========================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:3000;
-    padding:20px;
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(8px);
-    overflow-y:auto;
-}
-
-.modal.active{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.modal-box{
-    position:relative;
-    width:min(700px,100%);
-    padding:38px;
-    background:
-        linear-gradient(145deg,#111b2a,#070a10);
-    border:1px solid var(--gold-dark);
-    box-shadow:0 30px 100px rgba(0,0,0,.75);
-}
-
-.close{
-    position:absolute;
-    top:10px;
-    right:17px;
-    background:none;
-    border:0;
-    color:#aaa;
-    font-size:1.9rem;
-    cursor:pointer;
-}
-
-.close:hover{
-    color:var(--gold);
-}
-
-.modal-number{
-    color:var(--gold-dark);
-    font-size:.7rem;
-    letter-spacing:3px;
-}
-
-.modal-box h2{
-    color:var(--gold);
-    font-size:2rem;
-    line-height:1.2;
-    margin-top:6px;
-}
-
-.modal-position{
-    color:#bcb8ad;
-    margin-top:5px;
-}
-
-.modal-box p{
-    color:#aaa79e;
-    margin-bottom:18px;
-}
-
-.modal-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:800px){
+    *{
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        margin:0;
+        background:#07090d;
+        color:#e8e4d8;
+        font-family:Georgia, "Times New Roman", serif;
+        line-height:1.7;
+    }
+
+    /* =========================
+       STICKY HEADER
+       ========================= */
+
+    header{
+        position:sticky;
+        top:0;
+        z-index:1000;
+        background:rgba(7,9,13,.97);
+        border-bottom:1px solid #9b7b32;
+        box-shadow:0 3px 15px rgba(0,0,0,.55);
+    }
 
     .nav{
-        flex-direction:column;
-        align-items:flex-start;
+        max-width:1200px;
+        margin:auto;
+        padding:14px 22px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:20px;
     }
 
-    .nav-links{
-        gap:9px 14px;
+    .brand{
+        color:#d6b35a;
+        text-decoration:none;
+        font-size:1.2rem;
+        font-weight:bold;
+        white-space:nowrap;
+        letter-spacing:.04em;
     }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:flex-end;
+        gap:18px;
+    }
+
+    nav a{
+        color:#e8e4d8;
+        text-decoration:none;
+        font-size:.95rem;
+        transition:.2s;
+    }
+
+    nav a:hover{
+        color:#d6b35a;
+    }
+
+    /* IMPORTANT:
+       Keeps sticky header from covering section headings */
+    section[id]{
+        scroll-margin-top:90px;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero{
-        min-height:720px;
+        position:relative;
+        min-height:650px;
+        display:flex;
+        align-items:flex-end;
+        overflow:hidden;
+        border-bottom:1px solid #9b7b32;
     }
 
     .hero-image{
-        object-position:center top;
-        opacity:.9;
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:.88;
+        filter:brightness(1.08) contrast(1.03) saturate(.88);
+    }
+
+    .hero-overlay{
+        position:absolute;
+        inset:0;
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(7,9,13,.08) 0%,
+                rgba(7,9,13,.10) 38%,
+                rgba(7,9,13,.48) 68%,
+                rgba(7,9,13,.94) 100%
+            );
     }
 
     .hero-content{
-        padding:55px 18px 35px;
+        position:relative;
+        z-index:2;
+        width:100%;
+        padding:0 22px 42px;
+        text-align:center;
+    }
+
+    .hero-band{
+        max-width:900px;
+        margin:auto;
+        padding:24px 24px 20px;
+        background:rgba(7,9,13,.82);
+        border-top:1px solid rgba(214,179,90,.75);
+        border-bottom:1px solid rgba(214,179,90,.45);
+        box-shadow:0 8px 30px rgba(0,0,0,.35);
     }
 
     .hero h1{
-        font-size:2.35rem;
-        letter-spacing:3px;
+        margin:0;
+        color:#f0eadb;
+        font-size:clamp(2.5rem,7vw,5rem);
+        letter-spacing:.06em;
+        line-height:1.1;
+        text-shadow:0 3px 12px rgba(0,0,0,.85);
     }
 
-    .hero .motto{
-        font-size:.82rem;
-        letter-spacing:3px;
+    .motto{
+        margin:10px 0 22px;
+        color:#d6b35a;
+        font-size:1.15rem;
+        letter-spacing:.12em;
+        text-transform:uppercase;
     }
 
-    .hero-title{
-        padding:8px 13px 5px;
+    .buttons{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:12px;
     }
 
-    .token-layout{
-        grid-template-columns:1fr;
-        gap:40px;
+    .button{
+        display:inline-block;
+        padding:11px 20px;
+        border:1px solid #d6b35a;
+        color:#e8e4d8;
+        text-decoration:none;
+        background:rgba(7,9,13,.75);
+        transition:.2s;
+    }
+
+    .button:hover{
+        background:#d6b35a;
+        color:#07090d;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
+
+    main{
+        max-width:1200px;
+        margin:auto;
+        padding:0 22px;
+    }
+
+    section{
+        padding:80px 0;
+        border-bottom:1px solid rgba(155,123,50,.35);
+    }
+
+    .section-title{
+        text-align:center;
+        margin:0 0 14px;
+        color:#d6b35a;
+        font-size:2.1rem;
+        letter-spacing:.04em;
+    }
+
+    .section-intro{
+        max-width:800px;
+        margin:0 auto 40px;
+        text-align:center;
+        color:#cfc9bb;
+    }
+
+    /* =========================
+       LEGACIES
+       ========================= */
+
+    .legacy-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:22px;
+    }
+
+    .legacy-card{
+        background:#0c1017;
+        border:1px solid #4f4122;
+        padding:25px;
+        transition:.25s;
+    }
+
+    .legacy-card:hover{
+        border-color:#d6b35a;
+        transform:translateY(-2px);
+    }
+
+    .legacy-number{
+        color:#9b7b32;
+        font-size:.85rem;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+    }
+
+    .legacy-card h3{
+        margin:7px 0 4px;
+        color:#f0eadb;
+        font-size:1.4rem;
+    }
+
+    .legacy-role{
+        color:#d6b35a;
+        font-size:.95rem;
+        margin-bottom:13px;
+    }
+
+    .legacy-card p{
+        color:#c8c3b8;
+        margin-top:0;
+    }
+
+    .profile-button{
+        display:inline-block;
+        margin-top:8px;
+        padding:8px 13px;
+        border:1px solid #80672d;
+        color:#d6b35a;
+        background:transparent;
+        cursor:pointer;
+        font-family:inherit;
+        font-size:.9rem;
+    }
+
+    .profile-button:hover{
+        background:#d6b35a;
+        color:#07090d;
+    }
+
+    /* =========================
+       MEMORIAL TOWERS
+       ========================= */
+
+    .tower-divider{
+        display:flex;
+        justify-content:center;
+        align-items:flex-end;
+        gap:18px;
+        height:130px;
+        margin:10px auto 35px;
+    }
+
+    .tower{
+        width:38px;
+        height:100%;
+        border:1px solid #80672d;
+        background:linear-gradient(
+            to bottom,
+            #171c25,
+            #090c11
+        );
+        position:relative;
+    }
+
+    .tower:nth-child(2){
+        height:82%;
+    }
+
+    .tower:after{
+        content:"";
+        position:absolute;
+        left:7px;
+        right:7px;
+        top:12px;
+        bottom:12px;
+        background:
+            repeating-linear-gradient(
+                to bottom,
+                rgba(214,179,90,.22) 0 2px,
+                transparent 2px 10px
+            );
+    }
+
+    /* =========================
+       MISSION
+       ========================= */
+
+    .mission-box{
+        max-width:900px;
+        margin:auto;
+        background:#0c1017;
+        border:1px solid #4f4122;
+        padding:32px;
+    }
+
+    .mission-box p{
+        color:#d0cbc0;
+    }
+
+    .mission-box strong{
+        color:#d6b35a;
+    }
+
+    /* =========================
+       TOKEN
+       ========================= */
+
+    .coin-area{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:45px;
+        flex-wrap:wrap;
+        margin-top:35px;
     }
 
     .coin{
-        width:230px;
-        height:230px;
+        width:210px;
+        height:210px;
+        border-radius:50%;
+        border:8px solid #9b7b32;
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                #333b48 0%,
+                #151a22 40%,
+                #080a0e 75%
+            );
+        box-shadow:
+            0 0 0 4px #211b0e,
+            0 15px 40px rgba(0,0,0,.55);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        position:relative;
     }
 
-    .coin-center strong{
-        font-size:2.2rem;
+    .coin-inner{
+        border:1px solid #d6b35a;
+        border-radius:50%;
+        width:172px;
+        height:172px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .coin-title{
+        color:#d6b35a;
+        font-size:1.5rem;
+        font-weight:bold;
+        letter-spacing:.08em;
+    }
+
+    .coin-sub{
+        color:#e8e4d8;
+        font-size:.75rem;
+        margin-top:5px;
+        letter-spacing:.15em;
+    }
+
+    .token-copy{
+        max-width:560px;
+    }
+
+    .token-copy h3{
+        color:#f0eadb;
+        margin-top:0;
+        font-size:1.5rem;
+    }
+
+    .status{
+        padding:14px 16px;
+        margin-top:18px;
+        border-left:3px solid #d6b35a;
+        background:#10151d;
+        color:#cfc9bb;
+    }
+
+    /* =========================
+       DISCLAIMER / CONTACT
+       ========================= */
+
+    .notice{
+        max-width:900px;
+        margin:auto;
+        padding:28px;
+        background:#0c1017;
+        border:1px solid #4f4122;
+    }
+
+    .notice h3{
+        color:#d6b35a;
+        margin-top:0;
+    }
+
+    .notice p{
+        color:#c8c3b8;
+    }
+
+    .contact{
+        text-align:center;
+    }
+
+    .email{
+        color:#d6b35a;
+        text-decoration:none;
+        font-size:1.1rem;
+    }
+
+    .email:hover{
+        text-decoration:underline;
+    }
+
+    /* =========================
+       MODAL
+       ========================= */
+
+    .modal{
+        display:none;
+        position:fixed;
+        inset:0;
+        z-index:2000;
+        background:rgba(0,0,0,.82);
+        padding:30px 18px;
+        overflow-y:auto;
+    }
+
+    .modal.active{
+        display:flex;
+        align-items:center;
+        justify-content:center;
     }
 
     .modal-box{
-        padding:30px 23px;
+        width:min(760px,100%);
+        max-height:90vh;
+        overflow-y:auto;
+        background:#0c1017;
+        border:1px solid #d6b35a;
+        padding:30px;
+        box-shadow:0 20px 60px rgba(0,0,0,.65);
     }
-}
+
+    .modal-box h2{
+        color:#d6b35a;
+        margin-top:0;
+    }
+
+    .modal-box h4{
+        color:#e8e4d8;
+        margin-bottom:4px;
+    }
+
+    .modal-actions{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-top:24px;
+    }
+
+    .modal-actions a,
+    .modal-actions button{
+        font-family:inherit;
+        padding:9px 14px;
+        border:1px solid #80672d;
+        background:#10151d;
+        color:#d6b35a;
+        text-decoration:none;
+        cursor:pointer;
+    }
+
+    .modal-actions a:hover,
+    .modal-actions button:hover{
+        background:#d6b35a;
+        color:#07090d;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer{
+        text-align:center;
+        padding:35px 20px;
+        color:#8f8a80;
+        font-size:.85rem;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media(max-width:800px){
+
+        .nav{
+            padding:11px 15px;
+            flex-direction:column;
+            gap:7px;
+        }
+
+        nav{
+            justify-content:center;
+            gap:10px 14px;
+        }
+
+        nav a{
+            font-size:.85rem;
+        }
+
+        /* Mobile header is taller because navigation wraps */
+        section[id]{
+            scroll-margin-top:125px;
+        }
+
+        .hero{
+            min-height:570px;
+        }
+
+        .hero-content{
+            padding:0 12px 25px;
+        }
+
+        .hero-band{
+            padding:19px 15px 17px;
+        }
+
+        .hero h1{
+            font-size:2.5rem;
+        }
+
+        .motto{
+            font-size:.9rem;
+            letter-spacing:.08em;
+        }
+
+        .legacy-grid{
+            grid-template-columns:1fr;
+        }
+
+        section{
+            padding:60px 0;
+        }
+
+        .coin{
+            width:185px;
+            height:185px;
+        }
+
+        .coin-inner{
+            width:150px;
+            height:150px;
+        }
+
+        .mission-box,
+        .notice{
+            padding:23px;
+        }
+    }
+
+    @media(max-width:430px){
+
+        .brand{
+            font-size:1rem;
+        }
+
+        nav{
+            gap:8px 11px;
+        }
+
+        nav a{
+            font-size:.78rem;
+        }
+
+        section[id]{
+            scroll-margin-top:120px;
+        }
+
+        .hero h1{
+            font-size:2.05rem;
+        }
+
+        .buttons{
+            flex-direction:column;
+        }
+
+        .button{
+            width:100%;
+        }
+    }
 </style>
 </head>
 
 <body>
 
 <header>
+    <div class="nav">
+        <a class="brand" href="#top">LEGACY HONOR 911</a>
 
-<nav class="nav">
-
-<a href="#top" class="brand">
-    <span class="brand-mark">
-        <span></span>
-        <span></span>
-        <span></span>
-    </span>
-    LEGACY HONOR 911
-</a>
-
-<div class="nav-links">
-    <a href="#legacies">Legacies</a>
-    <a href="#mission">Mission</a>
-    <a href="#token">$LHR911</a>
-    <a href="#disclaimer">Disclaimer</a>
-    <a href="#contact">Contact</a>
-</div>
-
-</nav>
-
+        <nav>
+            <a href="#legacies">Legacies</a>
+            <a href="#mission">Mission</a>
+            <a href="#lhr911">$LHR911</a>
+            <a href="#disclaimer">Disclaimer</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-
-<main id="top">
-
-<!-- =========================
-     HERO
-========================= -->
+<div id="top"></div>
 
 <section class="hero">
+    <img
+        class="hero-image"
+        src="legacy-honor-911-hero.png"
+        alt="Legacy Honor 911 original project artwork"
+    >
 
-<img
-    class="hero-image"
-    src="legacy-honor-911-hero.png"
-    alt="Legacy Honor 911 memorial artwork">
+    <div class="hero-overlay"></div>
 
-<div class="hero-shade"></div>
+    <div class="hero-content">
+        <div class="hero-band">
+            <h1>Legacy Honor 911</h1>
 
-<div class="hero-edge"></div>
+            <div class="motto">
+                Remember. Honor. Preserve.
+            </div>
 
-<div class="hero-content">
+            <div class="buttons">
+                <a class="button" href="#legacies">Explore the Legacies</a>
+                <a class="button" href="#mission">Our Mission</a>
+                <a class="button" href="#lhr911">$LHR911</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <div class="hero-title">
+<main>
 
-        <h1>Legacy Honor 911</h1>
+<section id="legacies">
 
-        <div class="motto">
-            Remember. Honor. Preserve.
+    <div class="tower-divider">
+        <div class="tower"></div>
+        <div class="tower"></div>
+    </div>
+
+    <h2 class="section-title">The Legacies</h2>
+
+    <p class="section-intro">
+        Legacy Honor 911 presents an educational collection highlighting
+        professional accomplishments and business legacies associated with
+        individuals who worked in and around the World Trade Center on
+        September 11, 2001.
+    </p>
+
+    <div class="legacy-grid">
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 01</div>
+            <h3>David D. Alger</h3>
+            <div class="legacy-role">President — Fred Alger Management</div>
+            <p>
+                Investment management, business ownership, organizational
+                leadership, and the growth of a major financial enterprise.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('David D. Alger','President — Fred Alger Management')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 02</div>
+            <h3>Joseph J. Berry</h3>
+            <div class="legacy-role">Co-CEO — Keefe, Bruyette &amp; Woods</div>
+            <p>
+                Leadership in financial services, investment banking, and the
+                specialized financial-services sector.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Joseph J. Berry','Co-CEO — Keefe, Bruyette & Woods')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 03</div>
+            <h3>David S. Berry</h3>
+            <div class="legacy-role">Chief of Research — Keefe, Bruyette &amp; Woods</div>
+            <p>
+                Financial research, securities analysis, industry expertise,
+                and professional leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('David S. Berry','Chief of Research — Keefe, Bruyette & Woods')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 04</div>
+            <h3>Jeffrey Marc Chairnoff</h3>
+            <div class="legacy-role">Managing Director — Sandler O'Neill</div>
+            <p>
+                Mortgage finance, investment banking, financial markets,
+                and senior professional leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Jeffrey Marc Chairnoff','Managing Director — Sandler O\\'Neill')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 05</div>
+            <h3>Martin Wohlforth</h3>
+            <div class="legacy-role">Managing Director — Sandler O'Neill</div>
+            <p>
+                Investment banking, financial services, client relationships,
+                and executive-level leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Martin Wohlforth','Managing Director — Sandler O\\'Neill')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 06</div>
+            <h3>Eamon J. McEneaney</h3>
+            <div class="legacy-role">Senior Vice President &amp; Limited Partner — Cantor Fitzgerald</div>
+            <p>
+                Financial markets, institutional relationships, partnership,
+                and leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Eamon J. McEneaney','Senior Vice President & Limited Partner — Cantor Fitzgerald')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 07</div>
+            <h3>John Thomas McErlean Jr.</h3>
+            <div class="legacy-role">Vice President &amp; Partner — Cantor Fitzgerald</div>
+            <p>
+                Financial markets, partnership leadership, and the securities
+                industry.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('John Thomas McErlean Jr.','Vice President & Partner — Cantor Fitzgerald')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 08</div>
+            <h3>Jason David Cayne</h3>
+            <div class="legacy-role">Municipal Bond Broker &amp; Partner — Cantor Fitzgerald</div>
+            <p>
+                Municipal finance, securities markets, brokerage, and
+                partnership leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Jason David Cayne','Municipal Bond Broker & Partner — Cantor Fitzgerald')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 09</div>
+            <h3>Farrell Peter Lynch</h3>
+            <div class="legacy-role">Partner — Cantor Fitzgerald</div>
+            <p>
+                Financial markets, securities business, partnership,
+                and professional leadership.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Farrell Peter Lynch','Partner — Cantor Fitzgerald')">
+                View Research Profile →
+            </button>
+        </article>
+
+        <article class="legacy-card">
+            <div class="legacy-number">Legacy 10</div>
+            <h3>Charles A. Zion</h3>
+            <div class="legacy-role">Senior Vice President &amp; Equities Trader — Cantor Fitzgerald</div>
+            <p>
+                Equities trading, securities markets, and senior professional
+                responsibility.
+            </p>
+            <button class="profile-button"
+                onclick="openProfile('Charles A. Zion','Senior Vice President & Equities Trader — Cantor Fitzgerald')">
+                View Research Profile →
+            </button>
+        </article>
+
+    </div>
+</section>
+
+
+<section id="mission">
+
+    <h2 class="section-title">Our Mission</h2>
+
+    <div class="mission-box">
+
+        <p>
+            <strong>Legacy Honor 911</strong> is an independent educational
+            and memorial project created to preserve a record of professional
+            achievement and business legacy connected to September 11, 2001.
+        </p>
+
+        <p>
+            The project focuses on accomplishments, careers, leadership,
+            entrepreneurship, and the organizations these individuals helped
+            build or lead.
+        </p>
+
+        <p>
+            The purpose is not to rank lives or compare the value of one
+            person against another. Each person represented here deserves
+            individual remembrance and respect.
+        </p>
+
+        <p>
+            We seek to encourage historical research, responsible remembrance,
+            and continued learning about the people whose professional lives
+            were interrupted on that day.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="lhr911">
+
+    <h2 class="section-title">$LHR911</h2>
+
+    <p class="section-intro">
+        A separate digital community project connected to the Legacy Honor 911
+        identity.
+    </p>
+
+    <div class="coin-area">
+
+        <div class="coin">
+            <div class="coin-inner">
+                <div class="coin-title">$LHR911</div>
+                <div class="coin-sub">LEGACY • HONOR • 911</div>
+            </div>
+        </div>
+
+        <div class="token-copy">
+
+            <h3>Legacy Honor 911 Digital Token</h3>
+
+            <p>
+                $LHR911 is intended as a community token associated with the
+                Legacy Honor 911 project and its educational mission.
+            </p>
+
+            <p>
+                The token is separate from the historical research presented
+                on this website and should not be interpreted as an investment
+                guarantee, financial advice, or a promise of financial return.
+            </p>
+
+            <div class="status">
+                <strong>Launch Status:</strong><br>
+                Pump.fun launch has not yet been completed.
+                No contract address is currently published on this website.
+            </div>
+
         </div>
 
     </div>
 
-    <p class="hero-description">
-        An independent educational, historical, and memorial project
-        preserving professional legacies connected with September 11, 2001.
-    </p>
+</section>
 
-    <div class="buttons">
 
-        <a class="btn primary" href="#legacies">
-            Explore the Legacies
-        </a>
+<section id="disclaimer">
 
-        <a class="btn" href="#mission">
-            Our Mission
-        </a>
+    <h2 class="section-title">Disclaimer</h2>
 
-        <a class="btn" href="#token">
-            $LHR911
-        </a>
+    <div class="notice">
+
+        <h3>Independent Educational Project</h3>
+
+        <p>
+            Legacy Honor 911 is an independent educational, historical, and
+            memorial project. It is not affiliated with, endorsed by, or
+            sponsored by the families, estates, employers, former employers,
+            organizations, institutions, or representatives of the individuals
+            discussed on this website unless expressly stated otherwise.
+        </p>
+
+        <p>
+            The creator of this project does not claim permission, authorization,
+            representation, or endorsement from the families or estates of the
+            individuals featured.
+        </p>
+
+        <p>
+            Information is presented for educational and historical purposes.
+            Reasonable efforts will be made to identify reliable public sources,
+            and research profiles may be updated as additional information is
+            verified.
+        </p>
+
+        <p>
+            The project does not use the lives or deaths of individuals as a
+            guarantee of commercial success, financial performance, or token
+            value.
+        </p>
+
+        <p>
+            $LHR911 is a separate digital community project. Nothing on this
+            website constitutes financial, investment, legal, or tax advice.
+            Digital assets can involve substantial risk, including the possible
+            loss of all funds.
+        </p>
+
+        <p>
+            Any future charitable activity or support for survivors will only
+            be described if and when an appropriate legitimate structure and
+            recipient have been established.
+        </p>
 
     </div>
 
-</div>
-
 </section>
 
 
-<!-- =========================
-     LEGACIES
-========================= -->
+<section id="contact">
 
-<section class="section" id="legacies">
+    <h2 class="section-title">Contact</h2>
 
-<div class="section-title">
+    <div class="contact">
 
-    <div class="eyebrow">
-        Professional Legacy
+        <p>
+            For questions, corrections, research information, or project
+            inquiries:
+        </p>
+
+        <a
+            class="email"
+            href="mailto:LegacyHonor911@gmail.com">
+            LegacyHonor911@gmail.com
+        </a>
+
     </div>
-
-    <h2>Ten Legacies Remembered</h2>
-
-    <div class="divider"></div>
-
-    <p>
-        Explore professional achievements, leadership,
-        industries, and organizational legacies.
-    </p>
-
-</div>
-
-
-<div class="legacy-grid">
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 01</div>
-<h3>David D. Alger</h3>
-<div class="position">President — Fred Alger Management</div>
-<p>
-Investment management, business ownership, organizational leadership,
-and the growth of a major financial enterprise.
-</p>
-<button class="profile-button" onclick="openProfile('david-alger')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 02</div>
-<h3>Joseph J. Berry</h3>
-<div class="position">Co-CEO — Keefe, Bruyette & Woods</div>
-<p>
-Leadership in financial services, investment banking,
-and the specialized financial-services sector.
-</p>
-<button class="profile-button" onclick="openProfile('joseph-berry')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 03</div>
-<h3>David S. Berry</h3>
-<div class="position">Chief of Research — Keefe, Bruyette & Woods</div>
-<p>
-Financial research, securities analysis, industry expertise,
-and professional leadership.
-</p>
-<button class="profile-button" onclick="openProfile('david-berry')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 04</div>
-<h3>Jeffrey Marc Chairnoff</h3>
-<div class="position">Managing Director — Sandler O'Neill</div>
-<p>
-Mortgage finance, investment banking, financial markets,
-and senior professional leadership.
-</p>
-<button class="profile-button" onclick="openProfile('jeffrey-chairnoff')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 05</div>
-<h3>Martin Wohlforth</h3>
-<div class="position">Managing Director — Sandler O'Neill</div>
-<p>
-Investment banking, financial services, client relationships,
-and executive-level leadership.
-</p>
-<button class="profile-button" onclick="openProfile('martin-wohlforth')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 06</div>
-<h3>Eamon J. McEneaney</h3>
-<div class="position">
-Senior Vice President & Limited Partner — Cantor Fitzgerald
-</div>
-<p>
-Financial markets, institutional relationships,
-partnership, and leadership.
-</p>
-<button class="profile-button" onclick="openProfile('eamon-mceneaney')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 07</div>
-<h3>John Thomas McErlean Jr.</h3>
-<div class="position">
-Vice President & Partner — Cantor Fitzgerald
-</div>
-<p>
-Financial markets, partnership leadership,
-and the securities industry.
-</p>
-<button class="profile-button" onclick="openProfile('john-mcerlean')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 08</div>
-<h3>Jason David Cayne</h3>
-<div class="position">
-Municipal Bond Broker & Partner — Cantor Fitzgerald
-</div>
-<p>
-Municipal finance, securities markets, brokerage,
-and partnership leadership.
-</p>
-<button class="profile-button" onclick="openProfile('jason-cayne')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 09</div>
-<h3>Farrell Peter Lynch</h3>
-<div class="position">Partner — Cantor Fitzgerald</div>
-<p>
-Financial markets, securities business,
-partnership, and professional leadership.
-</p>
-<button class="profile-button" onclick="openProfile('farrell-lynch')">
-View Research Profile →
-</button>
-</article>
-
-
-<article class="legacy-card">
-<div class="legacy-number">LEGACY 10</div>
-<h3>Charles A. Zion</h3>
-<div class="position">
-Senior Vice President & Equities Trader — Cantor Fitzgerald
-</div>
-<p>
-Equities trading, securities markets,
-and senior professional responsibility.
-</p>
-<button class="profile-button" onclick="openProfile('charles-zion')">
-View Research Profile →
-</button>
-</article>
-
-</div>
-
-
-<div class="memorial-graphic">
-
-<div class="towers">
-
-<div class="tower"></div>
-<div class="tower"></div>
-
-</div>
-
-<div class="memorial-caption">
-REMEMBER • HONOR • PRESERVE
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     MISSION
-========================= -->
-
-<section class="mission" id="mission">
-
-<div class="section">
-
-<div class="section-title">
-
-<div class="eyebrow">The Purpose</div>
-
-<h2>Why Professional Legacy?</h2>
-
-<div class="divider"></div>
-
-</div>
-
-<div class="mission-box">
-
-<p>
-History is often remembered through dates, photographs,
-buildings, and headlines. Legacy Honor 911 takes another approach:
-remembering people through the professional work they built,
-the organizations they served, and the expertise they brought
-to their fields.
-</p>
-
-<p>
-This project is intended as an educational and memorial resource,
-preserving a small portion of the professional history surrounding
-September 11, 2001.
-</p>
-
-<p>
-The goal is not to rank lives or suggest that one person's life
-mattered more than another's. It is to preserve professional
-legacies that might otherwise become little more than names
-in historical records.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     TOKEN
-========================= -->
-
-<section class="section token-section" id="token">
-
-<div class="section-title">
-
-<div class="eyebrow">Community Project</div>
-
-<h2>$LHR911</h2>
-
-<div class="divider"></div>
-
-<p>
-A separate digital community project associated with the
-Legacy Honor 911 brand.
-</p>
-
-</div>
-
-
-<div class="token-layout">
-
-<div class="coin-area">
-
-<div class="coin">
-
-<div class="coin-top">
-LEGACY • HONOR • 911
-</div>
-
-<div class="coin-center">
-
-<strong>$LHR911</strong>
-
-<span>
-REMEMBER • HONOR • PRESERVE
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="token-copy">
-
-<h2>The Legacy Honor 911 Community Token</h2>
-
-<p>
-$LHR911 is planned as a separate digital community and
-memecoin project associated with Legacy Honor 911.
-</p>
-
-<p>
-The website and educational project come first.
-The official token page, contract information, and launch
-details will be published only after the token has actually
-been created.
-</p>
-
-<div class="token-status">
-
-<strong>Launch status:</strong>
-Pump.fun launch has not yet been completed.
-No contract address is being published at this time.
-
-</div>
-
-<div class="buttons">
-
-<span class="btn">
-Token Coming Soon
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     DISCLAIMER
-========================= -->
-
-<section class="section" id="disclaimer">
-
-<div class="section-title">
-
-<div class="eyebrow">Important Information</div>
-
-<h2>Independence & Disclaimer</h2>
-
-<div class="divider"></div>
-
-</div>
-
-
-<div class="disclaimer">
-
-<h3>Independent Educational & Memorial Project</h3>
-
-<p>
-Legacy Honor 911 is an independent educational, historical,
-and memorial project. It is not affiliated with, sponsored by,
-or endorsed by the families, estates, employers, or organizations
-associated with the individuals presented here unless expressly stated.
-</p>
-
-<p>
-The creator of this project does not claim permission,
-authorization, or endorsement from the families of the individuals
-discussed. The project is intended to respectfully preserve
-publicly available historical and professional information.
-</p>
-
-<p>
-The selection of individuals is based on public professional
-accomplishments and historical relevance. It is not a ranking
-of human lives, personal worth, or the importance of one person
-over another.
-</p>
-
-<p>
-Information presented on this website is primarily intended for
-educational, historical, and memorial purposes. Information should
-be independently verified when accuracy is important.
-</p>
-
-<p>
-$LHR911 is a separate digital community/memecoin project.
-It is not a charitable donation, an investment guarantee,
-or a promise of financial return. Cryptocurrency assets are
-speculative and may lose value.
-</p>
-
-<p>
-Any future charitable giving or survivor-support initiative would
-only be undertaken if and when a legitimate structure and
-appropriate recipient are established. Nothing on this website
-should be interpreted as stating that such support currently exists.
-</p>
-
-<p>
-Legacy Honor 911 will never ask visitors for a seed phrase,
-private key, wallet password, security code, or other confidential
-authentication information.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="section" id="contact">
-
-<div class="section-title">
-
-<div class="eyebrow">Official Contact</div>
-
-<h2>Legacy Honor 911</h2>
-
-<div class="divider"></div>
-
-</div>
-
-<div class="contact-box">
-
-<p>
-Questions, corrections, historical information,
-or legitimate project inquiries may be directed to:
-</p>
-
-<a
-class="email"
-href="mailto:LegacyHonor911@gmail.com">
-LegacyHonor911@gmail.com
-</a>
-
-<div class="buttons">
-
-<a
-class="btn primary"
-href="mailto:LegacyHonor911@gmail.com">
-Email Legacy Honor 911
-</a>
-
-<span class="btn">
-X — Coming Soon
-</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     SECURITY
-========================= -->
-
-<section class="security">
-
-<div class="section">
-
-<div class="security-box">
-
-<h3>Beware of Impersonators</h3>
-
-<p>
-Only trust links published directly through this official website.
-Legacy Honor 911 will never request your wallet recovery phrase,
-private key, password, or security codes.
-</p>
-
-<p style="margin-top:10px;">
-Verify project addresses and official social accounts before
-interacting with any digital asset.
-</p>
-
-</div>
-
-</div>
 
 </section>
 
 </main>
 
 
-<!-- =========================
-     PROFILE MODAL
-========================= -->
-
-<div class="modal" id="profileModal">
-
-<div class="modal-box">
-
-<button class="close" onclick="closeProfile()">×</button>
-
-<div class="modal-number" id="modalNumber"></div>
-
-<h2 id="modalName"></h2>
-
-<div class="modal-position" id="modalPosition"></div>
-
-<div class="divider" style="margin-left:0;"></div>
-
-<p id="modalDescription"></p>
-
-<p>
-The links below are external research tools. Outside websites
-are independent of Legacy Honor 911 and should be evaluated
-independently.
-</p>
-
-<div class="modal-actions">
-
-<a
-id="wikiLink"
-class="btn primary"
-href="#"
-target="_blank"
-rel="noopener noreferrer">
-Search Wikipedia
-</a>
-
-<a
-id="webLink"
-class="btn"
-href="#"
-target="_blank"
-rel="noopener noreferrer">
-Web Research
-</a>
-
-<button
-class="btn"
-onclick="closeProfile()">
-Close Profile
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-<p>
-<strong>LEGACY HONOR 911</strong>
-</p>
+    <p>
+        Legacy Honor 911 — Remember. Honor. Preserve.
+    </p>
 
-<p>
-Remember. Honor. Preserve.
-</p>
+    <p>
+        Independent educational and memorial project.
+    </p>
 
-<p style="margin-top:10px;">
-Independent educational, historical, and memorial project.
-</p>
-
-<p style="margin-top:10px;">
-Official contact: LegacyHonor911@gmail.com
-</p>
-
-<p style="margin-top:10px;">
-© 2026 Legacy Honor 911
-</p>
+    <p>
+        © 2026 Legacy Honor 911
+    </p>
 
 </footer>
 
 
+<!-- =========================
+     PROFILE MODAL
+     ========================= -->
+
+<div class="modal" id="profileModal">
+
+    <div class="modal-box">
+
+        <h2 id="profileName"></h2>
+
+        <h4 id="profileRole"></h4>
+
+        <p>
+            This research profile is intended to provide a starting point
+            for independent historical research into the individual's
+            professional career and accomplishments.
+        </p>
+
+        <p>
+            Legacy Honor 911 presents information for educational purposes
+            and encourages visitors to consult multiple reliable sources
+            when researching historical facts.
+        </p>
+
+        <div class="modal-actions">
+
+            <a
+                id="wikiLink"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer">
+                Search Wikipedia
+            </a>
+
+            <a
+                id="webLink"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer">
+                Web Research
+            </a>
+
+            <button onclick="closeProfile()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
 
-const profiles = {
+function openProfile(name, role){
 
-"david-alger":{
-number:"LEGACY 01",
-name:"David D. Alger",
-position:"President — Fred Alger Management",
-description:"Professional legacy focus: investment management, business ownership, organizational leadership, and the growth of a major financial enterprise."
-},
+    document.getElementById("profileName").textContent = name;
+    document.getElementById("profileRole").textContent = role;
 
-"joseph-berry":{
-number:"LEGACY 02",
-name:"Joseph J. Berry",
-position:"Co-CEO — Keefe, Bruyette & Woods",
-description:"Professional legacy focus: leadership in financial services, investment banking, and the specialized financial-services sector."
-},
+    const encodedName = encodeURIComponent(name);
 
-"david-berry":{
-number:"LEGACY 03",
-name:"David S. Berry",
-position:"Chief of Research — Keefe, Bruyette & Woods",
-description:"Professional legacy focus: financial research, securities analysis, industry expertise, and professional leadership."
-},
+    document.getElementById("wikiLink").href =
+        "https://en.wikipedia.org/wiki/Special:Search?search=" +
+        encodedName;
 
-"jeffrey-chairnoff":{
-number:"LEGACY 04",
-name:"Jeffrey Marc Chairnoff",
-position:"Managing Director — Sandler O'Neill",
-description:"Professional legacy focus: mortgage finance, investment banking, financial markets, and senior professional leadership."
-},
+    document.getElementById("webLink").href =
+        "https://www.google.com/search?q=" +
+        encodedName;
 
-"martin-wohlforth":{
-number:"LEGACY 05",
-name:"Martin Wohlforth",
-position:"Managing Director — Sandler O'Neill",
-description:"Professional legacy focus: investment banking, financial services, client relationships, and executive-level leadership."
-},
+    document.getElementById("profileModal").classList.add("active");
 
-"eamon-mceneaney":{
-number:"LEGACY 06",
-name:"Eamon J. McEneaney",
-position:"Senior Vice President & Limited Partner — Cantor Fitzgerald",
-description:"Professional legacy focus: financial markets, institutional relationships, partnership, and leadership."
-},
-
-"john-mcerlean":{
-number:"LEGACY 07",
-name:"John Thomas McErlean Jr.",
-position:"Vice President & Partner — Cantor Fitzgerald",
-description:"Professional legacy focus: financial markets, partnership leadership, and the securities industry."
-},
-
-"jason-cayne":{
-number:"LEGACY 08",
-name:"Jason David Cayne",
-position:"Municipal Bond Broker & Partner — Cantor Fitzgerald",
-description:"Professional legacy focus: municipal finance, securities markets, brokerage, and partnership leadership."
-},
-
-"farrell-lynch":{
-number:"LEGACY 09",
-name:"Farrell Peter Lynch",
-position:"Partner — Cantor Fitzgerald",
-description:"Professional legacy focus: financial markets, securities business, partnership, and professional leadership."
-},
-
-"charles-zion":{
-number:"LEGACY 10",
-name:"Charles A. Zion",
-position:"Senior Vice President & Equities Trader — Cantor Fitzgerald",
-description:"Professional legacy focus: equities trading, securities markets, and senior professional responsibility."
-}
-
-};
-
-
-function openProfile(id){
-
-const person=profiles[id];
-
-if(!person){
-return;
-}
-
-document.getElementById("modalNumber").textContent=person.number;
-
-document.getElementById("modalName").textContent=person.name;
-
-document.getElementById("modalPosition").textContent=person.position;
-
-document.getElementById("modalDescription").textContent=person.description;
-
-document.getElementById("wikiLink").href=
-"https://en.wikipedia.org/wiki/Special:Search?search="+
-encodeURIComponent(person.name);
-
-document.getElementById("webLink").href=
-"https://www.google.com/search?q="+
-encodeURIComponent(
-'"'+person.name+'" "'+person.position+'"'
-);
-
-document.getElementById("profileModal").classList.add("active");
-
-document.body.style.overflow="hidden";
-
+    document.body.style.overflow = "hidden";
 }
 
 
 function closeProfile(){
 
-document.getElementById("profileModal").classList.remove("active");
+    document.getElementById("profileModal").classList.remove("active");
 
-document.body.style.overflow="";
-
+    document.body.style.overflow = "";
 }
 
 
-document.getElementById("profileModal").addEventListener(
-"click",
-function(event){
+document.getElementById("profileModal").addEventListener("click", function(event){
 
-if(event.target===this){
-closeProfile();
-}
+    if(event.target === this){
+        closeProfile();
+    }
 
 });
 
 
-document.addEventListener(
-"keydown",
-function(event){
+document.addEventListener("keydown", function(event){
 
-if(event.key==="Escape"){
-closeProfile();
-}
+    if(event.key === "Escape"){
+        closeProfile();
+    }
 
 });
 
