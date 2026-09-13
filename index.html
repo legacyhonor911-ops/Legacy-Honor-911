@@ -101,12 +101,14 @@ nav a:hover{
         );
 }
 
+/* TITLE MOVED LOWER */
 .hero-content{
     position:relative;
     z-index:2;
     width:100%;
-    padding:0 22px 42px;
+    padding:0 22px 28px;
     text-align:center;
+    transform:translateY(55px);
 }
 
 .hero-band{
@@ -173,10 +175,6 @@ section{
     border-bottom:1px solid rgba(155,123,50,.35);
 }
 
-/*
-   Small amount of offset only.
-   The floating navigation does NOT take up page space.
-*/
 section[id]{
     scroll-margin-top:35px;
 }
@@ -545,8 +543,10 @@ footer{
         min-height:620px;
     }
 
+    /* Move title lower on mobile too */
     .hero-content{
-        padding:0 12px 25px;
+        padding:0 12px 20px;
+        transform:translateY(35px);
     }
 
     .hero-band{
@@ -606,6 +606,10 @@ footer{
         font-size:.67rem;
     }
 
+    .hero-content{
+        transform:translateY(25px);
+    }
+
     .hero h1{
         font-size:2.05rem;
     }
@@ -624,9 +628,7 @@ footer{
 
 <body>
 
-<!-- =========================================
-     SMALL FLOATING NAVIGATION
-     ========================================= -->
+<!-- SMALL FLOATING NAVIGATION -->
 
 <header>
     <div class="nav">
@@ -641,9 +643,7 @@ footer{
 </header>
 
 
-<!-- =========================================
-     HERO
-     ========================================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -666,6 +666,7 @@ footer{
             </div>
 
             <div class="buttons">
+
                 <a class="button" href="#legacies">
                     Explore the Legacies
                 </a>
@@ -677,6 +678,7 @@ footer{
                 <a class="button" href="#lhr911">
                     $LHR911
                 </a>
+
             </div>
 
         </div>
@@ -688,9 +690,7 @@ footer{
 
 <main>
 
-<!-- =========================================
-     LEGACIES
-     ========================================= -->
+<!-- LEGACIES -->
 
 <section id="legacies">
 
@@ -1029,9 +1029,7 @@ footer{
 </section>
 
 
-<!-- =========================================
-     MISSION
-     ========================================= -->
+<!-- MISSION -->
 
 <section id="mission">
 
@@ -1070,9 +1068,7 @@ footer{
 </section>
 
 
-<!-- =========================================
-     LHR911
-     ========================================= -->
+<!-- LHR911 -->
 
 <section id="lhr911">
 
@@ -1137,9 +1133,7 @@ footer{
 </section>
 
 
-<!-- =========================================
-     DISCLAIMER
-     ========================================= -->
+<!-- DISCLAIMER -->
 
 <section id="disclaimer">
 
@@ -1197,9 +1191,7 @@ footer{
 </section>
 
 
-<!-- =========================================
-     CONTACT
-     ========================================= -->
+<!-- CONTACT -->
 
 <section id="contact">
 
@@ -1227,9 +1219,7 @@ footer{
 </main>
 
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1248,9 +1238,7 @@ footer{
 </footer>
 
 
-<!-- =========================================
-     PROFILE MODAL
-     ========================================= -->
+<!-- PROFILE MODAL -->
 
 <div class="modal" id="profileModal">
 
