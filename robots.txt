@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://legacyhonor911-ops.github.io/Legacy-Honor-911/sitemap.xml
