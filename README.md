@@ -20,6 +20,12 @@ Biographical and professional information is presented from publicly available s
 
 **$LHR911 is a separate digital community project.** Its existence does not make Legacy Honor 911 a financial, charitable, investment, or fundraising organization. No representation is made that $LHR911 is a memorial fund, victim-compensation program, family fund, or charitable solicitation.
 
+Official project page: https://legacyhonor911-ops.github.io/Legacy-Honor-911/lhr911.html
+
+Live token page: https://pump.fun/coin/Gcn97KKxVvykQujFBDeQ4h8aMtQ6JDgSrzNDL9ujpump
+
+Token mint: `Gcn97KKxVvykQujFBDeQ4h8aMtQ6JDgSrzNDL9ujpump`
+
 Any future charitable giving or creator-revenue decisions will be communicated separately and transparently and should not be inferred from the memorial purpose of this website.
 
 ## Official project
