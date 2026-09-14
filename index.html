@@ -1,10 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Legacy Honor 911</title>
+<meta name="description" content="Legacy Honor 911 is an independent educational and memorial project preserving professional legacies connected to September 11, 2001.">
+
+<title>Legacy Honor 911 | Remember. Honor. Preserve.</title>
 
 <style>
 *{
@@ -19,20 +22,16 @@ body{
     margin:0;
     background:#07090d;
     color:#e8e4d8;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:Georgia,"Times New Roman",serif;
     line-height:1.7;
 }
-
-/* =========================================
-   SMALL FLOATING NAVIGATION
-   ========================================= */
 
 header{
     position:fixed;
     top:18px;
     right:22px;
     z-index:1000;
-    background:rgba(7,9,13,.88);
+    background:rgba(7,9,13,.90);
     border:1px solid rgba(214,179,90,.65);
     border-radius:4px;
     box-shadow:0 6px 22px rgba(0,0,0,.5);
@@ -41,10 +40,6 @@ header{
 
 .nav{
     padding:9px 12px;
-}
-
-.brand{
-    display:none;
 }
 
 nav{
@@ -61,13 +56,10 @@ nav a{
     transition:.2s;
 }
 
-nav a:hover{
+nav a:hover,
+nav a:focus{
     color:#d6b35a;
 }
-
-/* =========================================
-   HERO
-   ========================================= */
 
 .hero{
     position:relative;
@@ -101,7 +93,6 @@ nav a:hover{
         );
 }
 
-/* TITLE MOVED LOWER */
 .hero-content{
     position:relative;
     z-index:2;
@@ -115,7 +106,7 @@ nav a:hover{
     max-width:900px;
     margin:auto;
     padding:24px 24px 20px;
-    background:rgba(7,9,13,.80);
+    background:rgba(7,9,13,.82);
     border-top:1px solid rgba(214,179,90,.75);
     border-bottom:1px solid rgba(214,179,90,.45);
     box-shadow:0 8px 30px rgba(0,0,0,.35);
@@ -155,14 +146,21 @@ nav a:hover{
     transition:.2s;
 }
 
-.button:hover{
+.button:hover,
+.button:focus{
     background:#d6b35a;
     color:#07090d;
 }
 
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
+.button.primary{
+    background:#d6b35a;
+    color:#07090d;
+}
+
+.button.primary:hover,
+.button.primary:focus{
+    background:#e8e4d8;
+}
 
 main{
     max-width:1200px;
@@ -193,10 +191,6 @@ section[id]{
     text-align:center;
     color:#cfc9bb;
 }
-
-/* =========================================
-   LEGACIES
-   ========================================= */
 
 .legacy-grid{
     display:grid;
@@ -252,14 +246,11 @@ section[id]{
     font-size:.9rem;
 }
 
-.profile-button:hover{
+.profile-button:hover,
+.profile-button:focus{
     background:#d6b35a;
     color:#07090d;
 }
-
-/* =========================================
-   MEMORIAL TOWERS
-   ========================================= */
 
 .tower-divider{
     display:flex;
@@ -301,10 +292,6 @@ section[id]{
         );
 }
 
-/* =========================================
-   MISSION
-   ========================================= */
-
 .mission-box{
     max-width:900px;
     margin:auto;
@@ -320,10 +307,6 @@ section[id]{
 .mission-box strong{
     color:#d6b35a;
 }
-
-/* =========================================
-   TOKEN
-   ========================================= */
 
 .coin-area{
     display:flex;
@@ -399,9 +382,48 @@ section[id]{
     color:#cfc9bb;
 }
 
-/* =========================================
-   DISCLAIMER / CONTACT
-   ========================================= */
+.status strong{
+    color:#d6b35a;
+}
+
+.official-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.link-card{
+    min-width:210px;
+    text-align:center;
+    padding:18px 20px;
+    background:#0c1017;
+    border:1px solid #4f4122;
+}
+
+.link-card h3{
+    margin:0 0 6px;
+    color:#d6b35a;
+    font-size:1.1rem;
+}
+
+.link-card p{
+    margin:0 0 12px;
+    color:#aaa59b;
+    font-size:.88rem;
+}
+
+.link-card a{
+    color:#e8e4d8;
+    text-decoration:none;
+}
+
+.link-card a:hover,
+.link-card a:focus{
+    color:#d6b35a;
+    text-decoration:underline;
+}
 
 .notice{
     max-width:900px;
@@ -430,13 +452,33 @@ section[id]{
     font-size:1.1rem;
 }
 
-.email:hover{
+.email:hover,
+.email:focus{
     text-decoration:underline;
 }
 
-/* =========================================
-   PROFILE MODAL
-   ========================================= */
+.social-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.social-links a{
+    display:inline-block;
+    padding:10px 18px;
+    border:1px solid #80672d;
+    color:#d6b35a;
+    text-decoration:none;
+    background:#0c1017;
+}
+
+.social-links a:hover,
+.social-links a:focus{
+    background:#d6b35a;
+    color:#07090d;
+}
 
 .modal{
     display:none;
@@ -498,20 +540,12 @@ section[id]{
     color:#07090d;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
-
 footer{
     text-align:center;
     padding:35px 20px;
     color:#8f8a80;
     font-size:.85rem;
 }
-
-/* =========================================
-   MOBILE
-   ========================================= */
 
 @media(max-width:800px){
 
@@ -543,7 +577,6 @@ footer{
         min-height:620px;
     }
 
-    /* Move title lower on mobile too */
     .hero-content{
         padding:0 12px 20px;
         transform:translateY(35px);
@@ -621,21 +654,27 @@ footer{
     .button{
         width:100%;
     }
-}
 
+    .official-links{
+        flex-direction:column;
+    }
+
+    .link-card{
+        width:100%;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- SMALL FLOATING NAVIGATION -->
-
 <header>
     <div class="nav">
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="#legacies">Legacies</a>
             <a href="#mission">Mission</a>
             <a href="#lhr911">$LHR911</a>
+            <a href="#links">Links</a>
             <a href="#disclaimer">Disclaimer</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -643,14 +682,12 @@ footer{
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
     <img
         class="hero-image"
         src="legacy-honor-911-hero.png"
-        alt="Legacy Honor 911 original project artwork"
+        alt="Original Legacy Honor 911 project artwork"
     >
 
     <div class="hero-overlay"></div>
@@ -675,7 +712,7 @@ footer{
                     Our Mission
                 </a>
 
-                <a class="button" href="#lhr911">
+                <a class="button primary" href="#lhr911">
                     $LHR911
                 </a>
 
@@ -690,15 +727,11 @@ footer{
 
 <main>
 
-<!-- LEGACIES -->
-
 <section id="legacies">
 
-    <div class="tower-divider">
-
+    <div class="tower-divider" aria-hidden="true">
         <div class="tower"></div>
         <div class="tower"></div>
-
     </div>
 
     <h2 class="section-title">
@@ -712,324 +745,172 @@ footer{
         September 11, 2001.
     </p>
 
-
     <div class="legacy-grid">
 
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 01
-            </div>
-
-            <h3>
-                David D. Alger
-            </h3>
-
+            <div class="legacy-number">Legacy 01</div>
+            <h3>David D. Alger</h3>
             <div class="legacy-role">
                 President — Fred Alger Management
             </div>
-
             <p>
                 Investment management, business ownership, organizational
                 leadership, and the growth of a major financial enterprise.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'David D. Alger',
-                    'President — Fred Alger Management'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('David D. Alger','President — Fred Alger Management')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 02
-            </div>
-
-            <h3>
-                Joseph J. Berry
-            </h3>
-
+            <div class="legacy-number">Legacy 02</div>
+            <h3>Joseph J. Berry</h3>
             <div class="legacy-role">
                 Co-CEO — Keefe, Bruyette &amp; Woods
             </div>
-
             <p>
                 Leadership in financial services, investment banking,
                 and the specialized financial-services sector.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Joseph J. Berry',
-                    'Co-CEO — Keefe, Bruyette & Woods'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Joseph J. Berry','Co-CEO — Keefe, Bruyette & Woods')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 03
-            </div>
-
-            <h3>
-                David S. Berry
-            </h3>
-
+            <div class="legacy-number">Legacy 03</div>
+            <h3>David S. Berry</h3>
             <div class="legacy-role">
                 Chief of Research — Keefe, Bruyette &amp; Woods
             </div>
-
             <p>
                 Financial research, securities analysis, industry expertise,
                 and professional leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'David S. Berry',
-                    'Chief of Research — Keefe, Bruyette & Woods'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('David S. Berry','Chief of Research — Keefe, Bruyette & Woods')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 04
-            </div>
-
-            <h3>
-                Jeffrey Marc Chairnoff
-            </h3>
-
+            <div class="legacy-number">Legacy 04</div>
+            <h3>Jeffrey Marc Chairnoff</h3>
             <div class="legacy-role">
                 Managing Director — Sandler O'Neill
             </div>
-
             <p>
                 Mortgage finance, investment banking, financial markets,
                 and senior professional leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Jeffrey Marc Chairnoff',
-                    'Managing Director — Sandler O\\'Neill'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Jeffrey Marc Chairnoff','Managing Director — Sandler O\\'Neill')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 05
-            </div>
-
-            <h3>
-                Martin Wohlforth
-            </h3>
-
+            <div class="legacy-number">Legacy 05</div>
+            <h3>Martin Wohlforth</h3>
             <div class="legacy-role">
                 Managing Director — Sandler O'Neill
             </div>
-
             <p>
                 Investment banking, financial services, client relationships,
                 and executive-level leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Martin Wohlforth',
-                    'Managing Director — Sandler O\\'Neill'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Martin Wohlforth','Managing Director — Sandler O\\'Neill')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 06
-            </div>
-
-            <h3>
-                Eamon J. McEneaney
-            </h3>
-
+            <div class="legacy-number">Legacy 06</div>
+            <h3>Eamon J. McEneaney</h3>
             <div class="legacy-role">
                 Senior Vice President &amp; Limited Partner — Cantor Fitzgerald
             </div>
-
             <p>
                 Financial markets, institutional relationships, partnership,
                 and leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Eamon J. McEneaney',
-                    'Senior Vice President & Limited Partner — Cantor Fitzgerald'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Eamon J. McEneaney','Senior Vice President & Limited Partner — Cantor Fitzgerald')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 07
-            </div>
-
-            <h3>
-                John Thomas McErlean Jr.
-            </h3>
-
+            <div class="legacy-number">Legacy 07</div>
+            <h3>John Thomas McErlean Jr.</h3>
             <div class="legacy-role">
                 Vice President &amp; Partner — Cantor Fitzgerald
             </div>
-
             <p>
                 Financial markets, partnership leadership,
                 and the securities industry.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'John Thomas McErlean Jr.',
-                    'Vice President & Partner — Cantor Fitzgerald'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('John Thomas McErlean Jr.','Vice President & Partner — Cantor Fitzgerald')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 08
-            </div>
-
-            <h3>
-                Jason David Cayne
-            </h3>
-
+            <div class="legacy-number">Legacy 08</div>
+            <h3>Jason David Cayne</h3>
             <div class="legacy-role">
                 Municipal Bond Broker &amp; Partner — Cantor Fitzgerald
             </div>
-
             <p>
                 Municipal finance, securities markets, brokerage,
                 and partnership leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Jason David Cayne',
-                    'Municipal Bond Broker & Partner — Cantor Fitzgerald'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Jason David Cayne','Municipal Bond Broker & Partner — Cantor Fitzgerald')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 09
-            </div>
-
-            <h3>
-                Farrell Peter Lynch
-            </h3>
-
+            <div class="legacy-number">Legacy 09</div>
+            <h3>Farrell Peter Lynch</h3>
             <div class="legacy-role">
                 Partner — Cantor Fitzgerald
             </div>
-
             <p>
                 Financial markets, securities business, partnership,
                 and professional leadership.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Farrell Peter Lynch',
-                    'Partner — Cantor Fitzgerald'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Farrell Peter Lynch','Partner — Cantor Fitzgerald')">
                 View Research Profile →
             </button>
-
         </article>
 
-
         <article class="legacy-card">
-
-            <div class="legacy-number">
-                Legacy 10
-            </div>
-
-            <h3>
-                Charles A. Zion
-            </h3>
-
+            <div class="legacy-number">Legacy 10</div>
+            <h3>Charles A. Zion</h3>
             <div class="legacy-role">
                 Senior Vice President &amp; Equities Trader — Cantor Fitzgerald
             </div>
-
             <p>
                 Equities trading, securities markets,
                 and senior professional responsibility.
             </p>
-
-            <button
-                class="profile-button"
-                onclick="openProfile(
-                    'Charles A. Zion',
-                    'Senior Vice President & Equities Trader — Cantor Fitzgerald'
-                )">
+            <button class="profile-button"
+                onclick="openProfile('Charles A. Zion','Senior Vice President & Equities Trader — Cantor Fitzgerald')">
                 View Research Profile →
             </button>
-
         </article>
 
     </div>
 
 </section>
 
-
-<!-- MISSION -->
 
 <section id="mission">
 
@@ -1068,8 +949,6 @@ footer{
 </section>
 
 
-<!-- LHR911 -->
-
 <section id="lhr911">
 
     <h2 class="section-title">
@@ -1077,13 +956,13 @@ footer{
     </h2>
 
     <p class="section-intro">
-        A separate digital community project connected to the
+        A separate digital community project associated with the
         Legacy Honor 911 identity.
     </p>
 
     <div class="coin-area">
 
-        <div class="coin">
+        <div class="coin" aria-label="Conceptual Legacy Honor 911 coin graphic">
 
             <div class="coin-inner">
 
@@ -1099,7 +978,6 @@ footer{
 
         </div>
 
-
         <div class="token-copy">
 
             <h3>
@@ -1107,22 +985,24 @@ footer{
             </h3>
 
             <p>
-                $LHR911 is intended as a community token associated with
-                the Legacy Honor 911 project and its educational mission.
+                $LHR911 is a separate digital community project associated
+                with the Legacy Honor 911 identity.
             </p>
 
             <p>
                 The token is separate from the historical research presented
-                on this website and should not be interpreted as an investment
-                guarantee, financial advice, or a promise of financial return.
+                on this website. Nothing on this website should be interpreted
+                as financial, investment, legal, or tax advice, or as a
+                guarantee of financial return.
             </p>
 
             <div class="status">
 
                 <strong>Launch Status:</strong><br>
 
-                Pump.fun launch has not yet been completed.
-                No contract address is currently published on this website.
+                $LHR911 has not yet been launched on Pump.fun.
+                The official Pump.fun link will be published here only after
+                the launch page has been created and verified.
 
             </div>
 
@@ -1133,7 +1013,71 @@ footer{
 </section>
 
 
-<!-- DISCLAIMER -->
+<section id="links">
+
+    <h2 class="section-title">
+        Official Links
+    </h2>
+
+    <p class="section-intro">
+        These are the official online channels currently associated with
+        Legacy Honor 911.
+    </p>
+
+    <div class="official-links">
+
+        <div class="link-card">
+
+            <h3>Official X</h3>
+
+            <p>
+                Follow project updates and announcements.
+            </p>
+
+            <a
+                href="https://x.com/LegacyHonor911"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Legacy Honor 911 official X account">
+                @LegacyHonor911 →
+            </a>
+
+        </div>
+
+
+        <div class="link-card">
+
+            <h3>Project Email</h3>
+
+            <p>
+                Questions, corrections, and research inquiries.
+            </p>
+
+            <a href="mailto:LegacyHonor911@gmail.com">
+                LegacyHonor911@gmail.com →
+            </a>
+
+        </div>
+
+
+        <div class="link-card">
+
+            <h3>Pump.fun</h3>
+
+            <p>
+                Official $LHR911 launch page.
+            </p>
+
+            <span style="color:#8f8a80;">
+                Launch pending
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <section id="disclaimer">
 
@@ -1164,8 +1108,8 @@ footer{
         <p>
             Information is presented for educational and historical purposes.
             Reasonable efforts will be made to identify reliable public sources,
-            and research profiles may be updated as additional information is
-            verified.
+            and research profiles may be updated as additional information
+            is verified.
         </p>
 
         <p>
@@ -1180,18 +1124,10 @@ footer{
             loss of all funds.
         </p>
 
-        <p>
-            Any future charitable activity or support for survivors will only
-            be described if and when an appropriate legitimate structure and
-            recipient have been established.
-        </p>
-
     </div>
 
 </section>
 
-
-<!-- CONTACT -->
 
 <section id="contact">
 
@@ -1212,14 +1148,23 @@ footer{
             LegacyHonor911@gmail.com
         </a>
 
+        <div class="social-links">
+
+            <a
+                href="https://x.com/LegacyHonor911"
+                target="_blank"
+                rel="noopener noreferrer">
+                Official X — @LegacyHonor911
+            </a>
+
+        </div>
+
     </div>
 
 </section>
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1238,11 +1183,13 @@ footer{
 </footer>
 
 
-<!-- PROFILE MODAL -->
+<div class="modal" id="profileModal" aria-hidden="true">
 
-<div class="modal" id="profileModal">
-
-    <div class="modal-box">
+    <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="profileName">
 
         <h2 id="profileName"></h2>
 
@@ -1312,6 +1259,10 @@ function openProfile(name, role){
         .classList
         .add("active");
 
+    document
+        .getElementById("profileModal")
+        .setAttribute("aria-hidden","false");
+
     document.body.style.overflow = "hidden";
 }
 
@@ -1322,6 +1273,10 @@ function closeProfile(){
         .getElementById("profileModal")
         .classList
         .remove("active");
+
+    document
+        .getElementById("profileModal")
+        .setAttribute("aria-hidden","true");
 
     document.body.style.overflow = "";
 }
@@ -1350,3 +1305,4 @@ document.addEventListener("keydown", function(event){
 
 </body>
 </html>
+```
