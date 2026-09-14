@@ -142,89 +142,37 @@
     ========================= */
 
     .hero {
-      min-height: 86vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
       border-bottom: 1px solid var(--line);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(7, 9, 13, 0.18),
-          rgba(7, 9, 13, 0.82)
-        );
-      pointer-events: none;
+      background: var(--bg);
     }
 
     .hero-image {
-      position: absolute;
-      inset: 0;
+      display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.72;
+      height: auto;
+      opacity: 1;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
       width: 100%;
-      padding: 120px 0 100px;
-    }
-
-    .hero-kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      font-size: 0.8rem;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: 0;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.025em;
-      text-shadow: 0 5px 30px rgba(0, 0, 0, 0.75);
-    }
-
-    .hero-tagline {
-      margin: 28px 0 18px;
-      color: var(--gold);
-      font-size: clamp(1.25rem, 2.6vw, 2rem);
-      letter-spacing: 0.08em;
-    }
-
-    .hero-description {
-      max-width: 760px;
-      color: #e1ddd1;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+      padding: 42px 0 55px;
     }
 
     .hero-note {
-      margin-top: 28px;
-      max-width: 760px;
+      margin: 0;
+      max-width: 900px;
       padding-left: 18px;
       border-left: 2px solid var(--gold-dark);
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
+      line-height: 1.8;
     }
 
     .hero-actions {
-      margin-top: 34px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 26px;
     }
 
     .button {
@@ -559,11 +507,16 @@
       letter-spacing: 0.08em;
     }
 
-    footer p {
-      color: #77756e;
-      max-width: 700px;
+    .footer-copy {
+      max-width: 650px;
+      color: #85827a;
       font-size: 0.86rem;
-      margin: 8px 0 0;
+      margin: 0;
+    }
+
+    .footer-email {
+      margin-top: 12px;
+      font-size: 0.9rem;
     }
 
     /* =========================
@@ -573,94 +526,200 @@
     .modal {
       position: fixed;
       inset: 0;
-      z-index: 2000;
-      display: none;
-      background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(7px);
-      padding: 20px;
-    }
-
-    .modal.active {
+      z-index: 1500;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.78);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
     }
 
     .modal-panel {
-      width: min(1000px, 100%);
-      max-height: 92vh;
+      width: min(900px, 100%);
+      max-height: min(88vh, 900px);
       overflow-y: auto;
+      position: relative;
+      padding: 42px;
       background: #0b0f15;
       border: 1px solid var(--gold-dark);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
-      padding: clamp(25px, 5vw, 50px);
-      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
     }
 
     .modal-close {
-      position: sticky;
-      float: right;
-      top: 0;
-      margin-left: 20px;
-      width: 42px;
-      height: 42px;
-      color: var(--gold);
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
       background: transparent;
-      border: 1px solid var(--gold-dark);
-      cursor: pointer;
-      font-size: 1.4rem;
+      color: var(--text);
+      font-size: 1.7rem;
       line-height: 1;
+      cursor: pointer;
     }
 
     .modal-close:hover {
-      background: rgba(214, 179, 90, 0.08);
-    }
-
-    .modal h2 {
-      padding-right: 55px;
-    }
-
-    .modal h3 {
       color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .modal-panel h2 {
+      padding-right: 45px;
+    }
+
+    .modal-panel h3 {
       margin-top: 32px;
-      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 1.15rem;
     }
 
-    .modal p,
-    .modal li {
-      color: #bdb9af;
+    .modal-panel p {
+      color: var(--muted);
     }
 
-    .modal ul {
-      padding-left: 22px;
-    }
-
-    .modal .final-note {
-      margin-top: 35px;
-      padding: 20px;
+    .final-note {
+      position: relative;
+      margin-top: 36px;
+      padding: 22px 24px;
       border: 1px solid var(--line);
-      color: var(--text);
-      background: rgba(214, 179, 90, 0.035);
+      background: rgba(214, 179, 90, 0.045);
     }
 
     /* =========================
-       RESPONSIVE
+       ACCESSIBILITY + POLISH
     ========================= */
 
-    @media (max-width: 850px) {
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 2000;
+      padding: 10px 14px;
+      color: var(--bg);
+      background: var(--gold);
+      border-radius: 3px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      box-shadow: 0 0 10px rgba(214, 179, 90, 0.45);
+      pointer-events: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .hero-content::before {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 1px;
+      margin-bottom: 22px;
+      background: var(--gold);
+      opacity: 0.75;
+    }
+
+    .hero-note {
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .honor-card,
+    .about-box,
+    .token-box,
+    .link-card {
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .honor-card:hover,
+    .about-box:hover,
+    .token-box:hover,
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(214, 179, 90, 0.42);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-note,
+      .hero-actions,
+      .honor-card,
+      .about-box,
+      .token-box,
+      .link-card {
+        animation: honor-fade-in 0.65s ease both;
+      }
+
+      .hero-actions {
+        animation-delay: 0.08s;
+      }
+
+      @keyframes honor-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
       .nav-inner {
-        padding: 10px 0;
         align-items: flex-start;
         flex-direction: column;
+        padding: 14px 0;
       }
 
       .nav-links {
         justify-content: flex-start;
-        width: 100%;
       }
 
-      .hero {
-        min-height: 78vh;
+      .hero-content {
+        padding: 32px 20px 42px;
+      }
+
+      .honor-grid,
+      .link-grid {
+        grid-template-columns: 1fr;
       }
 
       .mission-grid {
@@ -668,68 +727,59 @@
         gap: 35px;
       }
 
-      .honor-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .link-grid {
-        grid-template-columns: 1fr;
-      }
-
       .footer-inner {
         flex-direction: column;
       }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .modal-panel {
+        padding: 32px 24px;
+      }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 520px) {
       .container {
         width: min(100% - 28px, 1120px);
       }
 
-      section {
-        padding: 70px 0;
+      .brand {
+        font-size: 0.95rem;
       }
 
-      .hero-content {
-        padding: 100px 0 70px;
-      }
-
-      .hero h1 {
-        font-size: 3.25rem;
-      }
-
-      .hero-tagline {
-        font-size: 1.1rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .button {
-        text-align: center;
-      }
-
-      .honor-card,
-      .about-box,
-      .token-box {
-        padding: 23px;
+      .nav-links {
+        gap: 2px;
       }
 
       .nav-links a,
       .nav-disclaimer {
         padding: 6px 7px;
-        font-size: 0.86rem;
+        font-size: 0.85rem;
+      }
+
+      .hero-content {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .honor-card,
+      .about-box {
+        padding: 22px;
+      }
+
+      .token-box {
+        padding: 26px 22px;
       }
 
       .modal {
-        padding: 8px;
+        padding: 10px;
       }
 
       .modal-panel {
-        max-height: 96vh;
-        padding: 22px;
+        max-height: 94vh;
+        padding: 30px 19px;
       }
     }
 
@@ -741,27 +791,31 @@
       *,
       *::before,
       *::after {
-        transition: none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#honor">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- =========================
        NAVIGATION
   ========================= -->
 
-  <nav class="site-nav" aria-label="Main navigation">
+  <nav class="site-nav" aria-label="Primary navigation">
     <div class="container nav-inner">
 
-      <a class="brand" href="#honor">
+      <a class="brand" href="#top">
         LEGACY <span>HONOR</span> 911
       </a>
 
       <div class="nav-links">
-        <a href="#honor">Honor</a>
+        <a href="#honor">Those We Honor</a>
         <a href="#mission">Mission</a>
         <a href="#about">About</a>
         <a href="#lhr911">$LHR911</a>
@@ -780,7 +834,6 @@
     </div>
   </nav>
 
-
   <!-- =========================
        HERO
   ========================= -->
@@ -790,359 +843,392 @@
     <img
       class="hero-image"
       src="legacy-honor-911-hero.png"
-      alt="Original Legacy Honor 911 memorial artwork"
+      alt="Legacy Honor 911 memorial artwork"
     >
 
-    <div class="hero-content">
-      <div class="container">
+    <div class="hero-content container">
 
-        <div class="hero-kicker">
-          Independent Educational &amp; Memorial Project
-        </div>
+      <p class="hero-note hero-note-below">
+        This project focuses on professional accomplishments, careers,
+        leadership, entrepreneurship, and the work people built during their
+        lives. It is not intended to rank the value of one life above another.
+      </p>
 
-        <h1>Legacy Honor 911</h1>
-
-        <div class="hero-tagline">
-          Remember. Honor. Preserve.
-        </div>
-
-        <p class="hero-description">
-          An independent educational and memorial project recognizing
-          documented professional legacies associated with the World Trade
-          Center on September 11, 2001.
-        </p>
-
-        <p class="hero-note">
-          This project focuses on professional accomplishments, careers,
-          leadership, entrepreneurship, and the work people built during
-          their lives. It is not intended to rank the value of one life
-          above another.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button" href="#honor">Those We Honor</a>
-          <a class="button secondary" href="#mission">Our Mission</a>
-        </div>
-
+      <div class="hero-actions">
+        <a class="button" href="#honor">Those We Honor</a>
+        <a class="button secondary" href="#mission">Our Mission</a>
       </div>
+
     </div>
 
   </header>
 
+  <main id="main-content">
 
   <!-- =========================
        THOSE WE HONOR
   ========================= -->
 
   <section id="honor">
+
     <div class="container">
 
-      <div class="section-kicker">Remember</div>
+      <div class="section-kicker">
+        Remember
+      </div>
 
       <h2>Those We Honor</h2>
 
       <p class="section-intro">
-        The following individuals are presented as an initial collection of
-        documented professional legacies. Each profile is intended to provide
-        a starting point for further research and remembrance.
+        Legacy Honor 911 is dedicated to preserving the professional stories,
+        accomplishments, leadership, ambitions, and enduring legacies of
+        people whose lives were connected to the World Trade Center on
+        September 11, 2001.
       </p>
 
       <div class="honor-grid">
 
-        <!-- 01 -->
-        <article class="honor-card">
-          <div class="honor-number">01</div>
+        <!-- PERSON 01 -->
 
-          <h3>David D. Alger</h3>
+        <article class="honor-card">
+
+          <div class="honor-number">
+            01
+          </div>
+
+          <h3>Rick Rescorla</h3>
 
           <p class="honor-role">
-            President — Fred Alger Management
+            Security Leadership • Morgan Stanley
           </p>
 
           <p>
-            A senior leader in the investment management profession whose
-            career became part of the history of Fred Alger Management and
-            the financial community surrounding the World Trade Center.
+            Rick Rescorla was a decorated Vietnam veteran and a senior
+            security professional at Morgan Stanley. He became widely known
+            for his leadership, preparation, and insistence on evacuation
+            procedures that helped save thousands of lives on September 11,
+            2001.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=David+D.+Alger+Fred+Alger+Management"
+            href="https://www.morganstanley.com/about-us/memorial"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research David D. Alger
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 02 -->
 
-        <!-- 02 -->
         <article class="honor-card">
-          <div class="honor-number">02</div>
 
-          <h3>Joseph J. Berry</h3>
+          <div class="honor-number">
+            02
+          </div>
+
+          <h3>John P. O'Neill</h3>
 
           <p class="honor-role">
-            Chairman &amp; Co-CEO — Keefe, Bruyette &amp; Woods
+            Counterterrorism Leadership • Port Authority
           </p>
 
           <p>
-            A financial-services executive and leader at Keefe, Bruyette &amp;
-            Woods whose professional career included senior leadership in
-            investment banking and financial services.
+            John O'Neill was a highly respected FBI counterterrorism expert
+            who later became the Director of Security for the World Trade
+            Center. His career was defined by investigations, intelligence,
+            leadership, and a sustained focus on the terrorist threat.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Joseph+J.+Berry+Keefe+Bruyette+Woods"
+            href="https://www.fbi.gov/history/famous-cases/9-11-investigation"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Joseph J. Berry
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 03 -->
 
-        <!-- 03 -->
         <article class="honor-card">
-          <div class="honor-number">03</div>
 
-          <h3>David S. Berry</h3>
+          <div class="honor-number">
+            03
+          </div>
+
+          <h3>Brian Clark</h3>
 
           <p class="honor-role">
-            Executive Vice President &amp; Director of Research —
-            Keefe, Bruyette &amp; Woods
+            Financial Services • Euro Brokers
           </p>
 
           <p>
-            A research and financial-services professional whose career at
-            Keefe, Bruyette &amp; Woods included executive leadership and
-            responsibility for the firm's research activities.
+            Brian Clark was a senior executive at Euro Brokers who survived
+            the collapse of the South Tower after helping others find a path
+            to safety. His professional career and actions on September 11
+            reflect both business leadership and personal courage.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=David+S.+Berry+Keefe+Bruyette+Woods"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research David S. Berry
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 04 -->
 
-        <!-- 04 -->
         <article class="honor-card">
-          <div class="honor-number">04</div>
 
-          <h3>Jeffrey Marc Chairnoff</h3>
+          <div class="honor-number">
+            04
+          </div>
+
+          <h3>Ron DiFrancesco</h3>
 
           <p class="honor-role">
-            Managing Director, Mortgage Finance Group —
-            Sandler O'Neill
+            Financial Services • South Tower Survivor
           </p>
 
           <p>
-            A financial professional who advanced within Sandler O'Neill
-            before becoming managing director of the firm's mortgage finance
-            group.
+            Ron DiFrancesco worked at Fuji Bank in the South Tower and became
+            one of the final people to escape the building after the impact.
+            His experience represents both a professional life in financial
+            services and an extraordinary survival story.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Jeffrey+Marc+Chairnoff+Sandler+O%27Neill"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Jeffrey Marc Chairnoff
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 05 -->
 
-        <!-- 05 -->
         <article class="honor-card">
-          <div class="honor-number">05</div>
 
-          <h3>Martin Wohlforth</h3>
+          <div class="honor-number">
+            05
+          </div>
+
+          <h3>Daniel Lewin</h3>
 
           <p class="honor-role">
-            Managing Director — Sandler O'Neill
+            Technology Entrepreneurship • Akamai
           </p>
 
           <p>
-            A senior investment-banking professional whose career included
-            leadership at Sandler O'Neill and work within the financial
-            community located around the World Trade Center.
+            Daniel Lewin was an Israeli-American entrepreneur and technology
+            pioneer who co-founded Akamai Technologies. His work in internet
+            infrastructure helped shape the early architecture of modern
+            content delivery networks.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Martin+Wohlforth+Sandler+O%27Neill"
+            href="https://www.akamai.com/company/about-us/daniel-lewin"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Martin Wohlforth
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 06 -->
 
-        <!-- 06 -->
         <article class="honor-card">
-          <div class="honor-number">06</div>
 
-          <h3>Eamon J. McEneaney</h3>
+          <div class="honor-number">
+            06
+          </div>
+
+          <h3>Garnet Bailey</h3>
 
           <p class="honor-role">
-            Senior Vice President &amp; Limited Partner —
-            Cantor Fitzgerald
+            Corporate Leadership • Aon
           </p>
 
           <p>
-            A Cantor Fitzgerald executive and accomplished lacrosse figure
-            whose professional and athletic legacies extended across finance,
-            Cornell University, and the national lacrosse community.
+            Garnet Bailey was a respected insurance executive who worked at
+            Aon Corporation. His career reflected decades of professional
+            experience in the insurance industry and leadership within the
+            corporate community.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Eamon+J.+McEneaney+Cantor+Fitzgerald"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Eamon J. McEneaney
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 07 -->
 
-        <!-- 07 -->
         <article class="honor-card">
-          <div class="honor-number">07</div>
 
-          <h3>John Thomas McErlean Jr.</h3>
+          <div class="honor-number">
+            07
+          </div>
+
+          <h3>Charles J. “Chuck” Kew</h3>
 
           <p class="honor-role">
-            Vice President &amp; Partner — Cantor Fitzgerald
+            Financial Services • Cantor Fitzgerald
           </p>
 
           <p>
-            A Cantor Fitzgerald financial professional whose career and
-            professional relationships formed part of the firm's history
-            before September 11, 2001.
+            Charles Kew was a member of the Cantor Fitzgerald community whose
+            professional life was part of the financial-services network that
+            operated from the World Trade Center. His story is preserved as
+            part of the broader professional history of those lost.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=John+Thomas+McErlean+Jr.+Cantor+Fitzgerald"
+            href="https://www.cantor.com/about-us/9-11"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research John Thomas McErlean Jr.
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 08 -->
 
-        <!-- 08 -->
         <article class="honor-card">
-          <div class="honor-number">08</div>
 
-          <h3>Jason David Cayne</h3>
+          <div class="honor-number">
+            08
+          </div>
+
+          <h3>Barry Beracha</h3>
 
           <p class="honor-role">
-            Municipal Bond Broker &amp; Partner — Cantor Fitzgerald
+            Business Leadership • Aon
           </p>
 
           <p>
-            A financial professional associated with Cantor Fitzgerald whose
-            work in municipal bonds formed part of his professional legacy.
+            Barry Beracha was a senior executive in the insurance and
+            reinsurance industry. His career reflected leadership within the
+            financial and corporate community that made the World Trade
+            Center a center of global business.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Jason+David+Cayne+Cantor+Fitzgerald"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Jason David Cayne
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 09 -->
 
-        <!-- 09 -->
         <article class="honor-card">
-          <div class="honor-number">09</div>
 
-          <h3>Farrell Peter Lynch</h3>
+          <div class="honor-number">
+            09
+          </div>
+
+          <h3>Timothy “Tim” McCarthy</h3>
 
           <p class="honor-role">
-            Partner — Cantor Fitzgerald
+            Financial Services • Marsh & McLennan
           </p>
 
           <p>
-            A partner at Cantor Fitzgerald whose professional career formed
-            part of the firm's financial-services community at the World
-            Trade Center.
+            Timothy McCarthy was part of the professional community at Marsh
+            & McLennan. His life and career form part of the larger story of
+            the business leaders and professionals whose work was centered at
+            the World Trade Center.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Farrell+Peter+Lynch+Cantor+Fitzgerald"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Farrell Peter Lynch
+            Research source
           </a>
+
         </article>
 
+        <!-- PERSON 10 -->
 
-        <!-- 10 -->
         <article class="honor-card">
-          <div class="honor-number">10</div>
 
-          <h3>Charles A. Zion</h3>
+          <div class="honor-number">
+            10
+          </div>
+
+          <h3>Michael “Mickey” C. A. Glick</h3>
 
           <p class="honor-role">
-            Senior Vice President &amp; Equities Trader —
-            Cantor Fitzgerald
+            Business & Financial Services
           </p>
 
           <p>
-            A senior Cantor Fitzgerald equities professional whose career
-            represents another documented professional legacy connected with
-            the World Trade Center financial community.
+            Michael Glick was part of the professional community working
+            within the World Trade Center. His inclusion reflects the project's
+            commitment to preserving the professional identities and
+            accomplishments of individuals whose lives were lost.
           </p>
 
           <a
             class="research-link"
-            href="https://www.google.com/search?q=Charles+A.+Zion+Cantor+Fitzgerald"
+            href="https://www.911memorial.org/learn/resources/911-faqs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Research Charles A. Zion
+            Research source
           </a>
+
         </article>
 
       </div>
 
       <p class="research-note">
-        Research links open external search results to help visitors locate
-        additional public sources. Information presented here is intended
-        for educational and memorial purposes and may be refined when
-        reliable historical or professional sources provide additional
-        information or corrections.
+        Research links are provided for independent review. Legacy Honor 911
+        is not affiliated with or endorsed by the organizations linked above.
       </p>
 
     </div>
-  </section>
 
-
-  <!-- =========================
+  </section>  <!-- =========================
        MISSION
   ========================= -->
 
   <section id="mission">
+
     <div class="container">
 
-      <div class="section-kicker">Purpose</div>
+      <div class="section-kicker">
+        Purpose
+      </div>
 
       <h2>Our Mission</h2>
 
@@ -1151,28 +1237,30 @@
         <div class="mission-main">
 
           <p>
-            Legacy Honor 911 exists to remember people through more than the
-            circumstances of their deaths.
+            Legacy Honor 911 exists to remember people not only by the
+            circumstances of their deaths, but also by the professional lives
+            they built before September 11, 2001.
           </p>
 
           <p>
-            The project seeks to bring documented professional accomplishments
-            into the light of remembrance: the careers people built, the
-            organizations they served, the leadership they demonstrated, and
-            the work they contributed to their communities and professions.
+            The World Trade Center represented a remarkable concentration of
+            business, finance, entrepreneurship, leadership, technology,
+            international commerce, and professional ambition. The people who
+            worked there contributed to that history through the organizations
+            they led, businesses they built, careers they developed, and work
+            they pursued.
           </p>
 
           <p>
-            The intention is educational, historical, and memorial. The people
-            presented here should be understood as individuals with lives,
-            careers, relationships, ambitions, and accomplishments—not merely
-            as names associated with a tragedy.
+            This project seeks to preserve those documented professional
+            legacies in a respectful and accessible format so that future
+            generations can learn more about the individuals behind the names.
           </p>
 
           <p>
-            This project is independently created and is not an official
-            memorial, governmental project, employer publication, or family
-            archive.
+            The project is intentionally independent. It does not claim to
+            speak for families, estates, employers, institutions, government
+            agencies, survivors, or memorial organizations.
           </p>
 
         </div>
@@ -1182,13 +1270,33 @@
           <h3>Our Principles</h3>
 
           <ul>
-            <li>Remember people as individuals.</li>
-            <li>Focus on documented professional legacies.</li>
-            <li>Use public information responsibly.</li>
-            <li>Correct information when reliable sources warrant it.</li>
-            <li>Do not rank the value of human lives.</li>
-            <li>Do not claim to speak for families or estates.</li>
-            <li>Respect intellectual-property and privacy boundaries.</li>
+            <li>
+              <strong>Respect.</strong>
+              Remember individuals as people with complete lives and identities.
+            </li>
+
+            <li>
+              <strong>Accuracy.</strong>
+              Prefer documented information and credible sources.
+            </li>
+
+            <li>
+              <strong>Transparency.</strong>
+              Clearly distinguish historical research from the separate
+              $LHR911 digital community project.
+            </li>
+
+            <li>
+              <strong>Independence.</strong>
+              Do not imply authorization, endorsement, sponsorship, or
+              representation without evidence.
+            </li>
+
+            <li>
+              <strong>Preservation.</strong>
+              Keep professional accomplishments and life stories accessible
+              for future generations.
+            </li>
           </ul>
 
         </aside>
@@ -1196,56 +1304,70 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- =========================
-       ABOUT
+       ABOUT / TRANSPARENCY
   ========================= -->
 
   <section id="about">
+
     <div class="container">
 
-      <div class="section-kicker">Transparency</div>
+      <div class="section-kicker">
+        Transparency
+      </div>
 
-      <h2>About the Project</h2>
+      <h2>About Legacy Honor 911</h2>
 
       <div class="about-box">
 
         <p>
           Legacy Honor 911 is an independently created educational and
-          memorial project. It was created to research, preserve, and present
-          professional legacies associated with individuals connected to the
-          World Trade Center on September 11, 2001.
+          memorial project. The project researches publicly available
+          information about people associated with the World Trade Center on
+          September 11, 2001, with particular attention to their professional
+          careers, accomplishments, leadership, entrepreneurship, and the
+          organizations and work they contributed to during their lives.
         </p>
 
         <p>
-          The project does not claim permission, authorization, sponsorship,
-          endorsement, or participation by the families, estates, heirs,
-          employers, former employers, organizations, or representatives of
-          the individuals referenced here.
+          The project is not intended to replace established memorials,
+          historical archives, government records, family histories, or
+          institutional collections. Instead, it is intended to provide
+          another accessible place where professional histories can be
+          remembered and researched.
         </p>
 
         <div class="transparency">
-          <strong>Creator transparency:</strong><br><br>
-          Legacy Honor 911 is an independently created project. Its creator
-          may receive income from separately operated commercial activities
-          associated with the project. No such income is represented as being
-          collected on behalf of the individuals, families, estates, or
-          survivors referenced on this website.
+
+          <strong>
+            Important distinction:
+          </strong>
+
+          Legacy Honor 911 is independent and does not claim to represent,
+          speak for, or act on behalf of any featured individual, family,
+          estate, survivor, employer, institution, government agency, or
+          memorial organization unless that relationship is expressly
+          established and identified.
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
   <!-- =========================
        $LHR911
-    ========================= -->
+  ========================= -->
 
   <section class="token-section" id="lhr911">
+
     <div class="container">
 
       <div class="separate-project">
@@ -1258,7 +1380,9 @@
           Associated Digital Project
         </div>
 
-        <h2 class="token-symbol">$LHR911</h2>
+        <h2 class="token-symbol">
+          $LHR911
+        </h2>
 
         <p class="token-subtitle">
           Legacy Honor 911 Digital Community Project
@@ -1285,17 +1409,21 @@
         </p>
 
         <div class="token-warning">
+
           <strong>Important:</strong>
+
           $LHR911 should not be represented as an investment, guaranteed
           opportunity, charitable contribution, or promise of financial
           return. Digital assets involve substantial risk, including the
           possibility of losing all funds. Visitors should conduct their own
           research and seek qualified professional advice where appropriate.
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
@@ -1304,9 +1432,12 @@
   ========================= -->
 
   <section id="links">
+
     <div class="container">
 
-      <div class="section-kicker">Connect</div>
+      <div class="section-kicker">
+        Connect
+      </div>
 
       <h2>Official Links</h2>
 
@@ -1324,7 +1455,9 @@
           rel="noopener noreferrer"
         >
           <strong>GitHub</strong>
-          <span>Project website source and development repository</span>
+          <span>
+            Project website source and development repository
+          </span>
         </a>
 
         <a
@@ -1334,7 +1467,31 @@
           rel="noopener noreferrer"
         >
           <strong>X — @LegacyHonor911</strong>
-          <span>Official Legacy Honor 911 social account</span>
+          <span>
+            Official Legacy Honor 911 social account
+          </span>
+        </a>
+
+        <a
+          class="link-card"
+          href="https://pump.fun/profile/2RRy2PwziWQRFUDc573xKoZuAbhhRXEpq8xEPuzs31uZ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Pump.fun — LegacyHonor911</strong>
+          <span>
+            Official project profile for the separate $LHR911 digital community project
+          </span>
+        </a>
+
+        <a
+          class="link-card"
+          href="mailto:legacyhonor911@gmail.com"
+        >
+          <strong>Project Email</strong>
+          <span>
+            legacyhonor911@gmail.com
+          </span>
         </a>
 
       </div>
@@ -1342,7 +1499,9 @@
 
       <div class="security">
 
-        <h3>Protect Yourself From Impersonators</h3>
+        <h3>
+          Protect Yourself From Impersonators
+        </h3>
 
         <p>
           Legacy Honor 911 will not ask you for passwords, seed phrases,
@@ -1355,6 +1514,7 @@
       </div>
 
     </div>
+
   </section>
 
 
@@ -1363,9 +1523,11 @@
   ========================= -->
 
   <footer>
+
     <div class="container footer-inner">
 
       <div>
+
         <div class="footer-brand">
           LEGACY HONOR 911
         </div>
@@ -1373,21 +1535,31 @@
         <p>
           Remember. Honor. Preserve.
         </p>
+
+        <p class="footer-email">
+          <a href="mailto:legacyhonor911@gmail.com">
+            legacyhonor911@gmail.com
+          </a>
+        </p>
+
       </div>
 
       <div>
-        <p>
+
+        <p class="footer-copy">
           Independent educational and memorial project.
           Not affiliated with or endorsed by any family, estate, employer,
           institution, or government agency unless expressly stated.
         </p>
 
-        <p>
+        <p class="footer-copy">
           &copy; 2026 Legacy Honor 911.
         </p>
+
       </div>
 
     </div>
+
   </footer>
 
 
@@ -1424,7 +1596,9 @@
       </h2>
 
 
-      <h3>Independent Educational and Memorial Project</h3>
+      <h3>
+        Independent Educational and Memorial Project
+      </h3>
 
       <p>
         Legacy Honor 911 is an independently created educational, historical,
@@ -1450,7 +1624,9 @@
       </p>
 
 
-      <h3>No Family or Estate Endorsement</h3>
+      <h3>
+        No Family or Estate Endorsement
+      </h3>
 
       <p>
         Legacy Honor 911 does not claim permission, authorization, sponsorship,
@@ -1476,7 +1652,9 @@
       </p>
 
 
-      <h3>$LHR911 — Separate Digital Community Project</h3>
+      <h3>
+        $LHR911 — Separate Digital Community Project
+      </h3>
 
       <p>
         $LHR911 is a separate digital community project associated with the
@@ -1499,7 +1677,9 @@
       </p>
 
 
-      <h3>Project Revenue and Creator Rewards</h3>
+      <h3>
+        Project Revenue and Creator Rewards
+      </h3>
 
       <p>
         Any creator rewards, platform revenue, commercial revenue, or other
@@ -1523,7 +1703,9 @@
       </p>
 
 
-      <h3>Future Charitable Giving</h3>
+      <h3>
+        Future Charitable Giving
+      </h3>
 
       <p>
         Legacy Honor 911 may, at the creator's discretion and only if a
@@ -1553,7 +1735,9 @@
       </p>
 
 
-      <h3>No Financial Promise</h3>
+      <h3>
+        No Financial Promise
+      </h3>
 
       <p>
         $LHR911 is presented as a separate digital community project and is
@@ -1574,7 +1758,9 @@
       </p>
 
 
-      <h3>Independent Project Status</h3>
+      <h3>
+        Independent Project Status
+      </h3>
 
       <p>
         Legacy Honor 911 is not affiliated with, endorsed by, sponsored by, or
@@ -1592,7 +1778,9 @@
       </p>
 
 
-      <h3>Intellectual Property and Third-Party Material</h3>
+      <h3>
+        Intellectual Property and Third-Party Material
+      </h3>
 
       <p>
         Legacy Honor 911 intends to use original artwork and properly licensed
@@ -1608,7 +1796,9 @@
       </p>
 
 
-      <h3>Research and Corrections</h3>
+      <h3>
+        Research and Corrections
+      </h3>
 
       <p>
         Historical research is an ongoing process. If reliable evidence
@@ -1624,14 +1814,17 @@
 
 
       <div class="final-note">
+
         <strong>
           By using this website, visitors should understand the distinction
           between the independent Legacy Honor 911 educational and memorial
           project and the separate $LHR911 digital community project.
         </strong>
+
       </div>
 
     </div>
+
   </div>
 
 
@@ -1640,6 +1833,11 @@
   ========================= -->
 
   <script>
+
+    /* =========================
+       DISCLAIMER MODAL
+    ========================= */
+
     const modal = document.getElementById("disclaimerModal");
     const openButton = document.getElementById("openDisclaimer");
     const closeButton = document.getElementById("closeDisclaimer");
@@ -1647,6 +1845,7 @@
     let previousActiveElement = null;
 
     function openDisclaimer() {
+
       previousActiveElement = document.activeElement;
 
       modal.classList.add("active");
@@ -1654,9 +1853,12 @@
       document.body.classList.add("modal-open");
 
       closeButton.focus();
+
     }
 
+
     function closeDisclaimer() {
+
       modal.classList.remove("active");
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
@@ -1664,21 +1866,432 @@
       if (previousActiveElement) {
         previousActiveElement.focus();
       }
+
     }
 
-    openButton.addEventListener("click", openDisclaimer);
-    closeButton.addEventListener("click", closeDisclaimer);
 
-    modal.addEventListener("click", function(event) {
-      if (event.target === modal) {
-        closeDisclaimer();
-      }
-    });
+    openButton.addEventListener(
+      "click",
+      openDisclaimer
+    );
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape" && modal.classList.contains("active")) {
-        closeDisclaimer();
+
+    closeButton.addEventListener(
+      "click",
+      closeDisclaimer
+    );
+
+
+    modal.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === modal) {
+          closeDisclaimer();
+        }
+
       }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("active")
+        ) {
+          closeDisclaimer();
+        }
+
+      }
+    );
+
+
+    /* =========================
+       SCROLL PROGRESS
+    ========================= */
+
+    const scrollProgress =
+      document.getElementById("scrollProgress");
+
+
+    function updateScrollProgress() {
+
+      const scrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progress =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      scrollProgress.style.width =
+        progress + "%";
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      updateScrollProgress,
+      { passive: true }
+    );
+
+
+    window.addEventListener(
+      "resize",
+      updateScrollProgress
+    );
+
+
+    updateScrollProgress();
+
+  </script>
+
+</main>
+
+</body>
+</html>  <!-- DISCLAIMER MODAL -->
+  <div
+    class="modal"
+    id="disclaimerModal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="disclaimerTitle"
+  >
+    <div class="modal-backdrop" data-close-disclaimer></div>
+
+    <div class="modal-dialog" role="document">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Close disclaimer"
+        data-close-disclaimer
+      >
+        &times;
+      </button>
+
+      <h2 id="disclaimerTitle">Project Disclaimer</h2>
+
+      <div class="modal-content">
+
+        <h3>Independent Educational and Memorial Project</h3>
+        <p>
+          Legacy Honor 911 is an independent educational and memorial project
+          created to remember and preserve the professional lives, careers,
+          accomplishments, leadership, entrepreneurship, ambitions, and work
+          of people associated with the World Trade Center on September 11,
+          2001.
+        </p>
+
+        <p>
+          The project is intended as a respectful historical and educational
+          resource. It does not rank the value of one person's life above
+          another.
+        </p>
+
+        <h3>No Family or Estate Endorsement</h3>
+        <p>
+          Unless expressly stated otherwise, Legacy Honor 911 has no
+          representation, endorsement, sponsorship, authorization, or
+          affiliation with the families, estates, representatives, employers,
+          former employers, business partners, or organizations associated
+          with any individual featured on this website.
+        </p>
+
+        <h3>$LHR911 — Separate Digital Community Project</h3>
+        <p>
+          The $LHR911 project is a separate digital community project
+          associated with Legacy Honor 911. It is not a memorial fund, family
+          fund, victim-compensation program, charitable solicitation, or
+          representation of the families or estates of those remembered here.
+        </p>
+
+        <p>
+          Participation in digital assets involves substantial risk,
+          including the possibility of losing some or all of the value
+          associated with a digital asset. Nothing on this website should be
+          interpreted as a promise of financial return or future appreciation.
+        </p>
+
+        <h3>Project Revenue and Creator Rewards</h3>
+        <p>
+          Any revenue, creator rewards, or other compensation received by
+          project creators in connection with the separate digital community
+          project belongs to the applicable project creator unless a specific
+          public commitment states otherwise.
+        </p>
+
+        <p>
+          The existence of this project does not create an obligation to
+          distribute funds to any particular individual, family, estate,
+          organization, or charitable cause.
+        </p>
+
+        <h3>Future Charitable Giving</h3>
+        <p>
+          Legacy Honor 911 may choose to support legitimate charitable
+          organizations or causes associated with remembrance, resilience,
+          education, emergency response, or other appropriate purposes.
+        </p>
+
+        <p>
+          Any future charitable contribution will be identified as clearly as
+          reasonably possible, including the recipient organization and the
+          relevant transaction or documentation when available.
+        </p>
+
+        <p>
+          A charitable contribution should not be interpreted as a payment to
+          individual victims, families, estates, or survivors unless that is
+          specifically and accurately established.
+        </p>
+
+        <h3>No Financial Promise</h3>
+        <p>
+          Nothing on this website constitutes financial, investment, legal,
+          tax, accounting, or other professional advice.
+        </p>
+
+        <p>
+          References to digital assets, markets, businesses, investments,
+          financial concepts, or potential future activities are provided for
+          informational purposes only.
+        </p>
+
+        <h3>Independent Project Status</h3>
+        <p>
+          Legacy Honor 911 is independently operated. The project should not
+          be interpreted as an official memorial, government program,
+          employer-sponsored initiative, or institutional publication unless
+          a specific relationship is expressly identified.
+        </p>
+
+        <h3>Intellectual Property and Third-Party Material</h3>
+        <p>
+          Names, titles, organizational references, trademarks, and other
+          third-party material remain the property of their respective owners.
+          Their appearance on this website does not imply endorsement,
+          sponsorship, or affiliation.
+        </p>
+
+        <p>
+          Legacy Honor 911 intends to use original, properly licensed, public
+          domain, or otherwise lawfully usable material whenever possible.
+        </p>
+
+        <h3>Research and Corrections</h3>
+        <p>
+          Historical and professional information has been assembled from
+          publicly available sources and research. While reasonable efforts
+          are made to maintain accuracy, errors or omissions may occur.
+        </p>
+
+        <p>
+          If you identify an inaccurate, incomplete, or inappropriate factual
+          statement, please contact Legacy Honor 911 so the information can
+          be reviewed and corrected when appropriate.
+        </p>
+
+        <h3>Final Distinction</h3>
+        <p>
+          The central purpose of Legacy Honor 911 is remembrance,
+          documentation, education, and preservation of professional legacy.
+          The separate digital community project does not change that purpose
+          and should not be interpreted as speaking for the people,
+          organizations, families, or estates referenced by this website.
+        </p>
+
+      </div>
+
+      <div class="modal-footer">
+        <button
+          class="button"
+          type="button"
+          data-close-disclaimer
+        >
+          I Understand
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div>
+        <strong>Legacy Honor 911</strong>
+        <p>Remember. Honor. Preserve.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#honor">Those We Honor</a>
+        <a href="#mission">Mission</a>
+        <a href="#about">About</a>
+        <a href="#token">$LHR911</a>
+        <a href="#links">Official Links</a>
+        <button
+          class="footer-disclaimer"
+          type="button"
+          data-open-disclaimer
+        >
+          Disclaimer
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Legacy Honor 911 is an independent educational and memorial project.
+        </p>
+
+        <p>
+          &copy; 2026 Legacy Honor 911. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* --------------------------------
+         SCROLL PROGRESS
+      -------------------------------- */
+
+      const progress = document.getElementById("scrollProgress");
+
+      function updateScrollProgress() {
+        if (!progress) return;
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        const percentage =
+          documentHeight > 0
+            ? (scrollTop / documentHeight) * 100
+            : 0;
+
+        progress.style.width = percentage + "%";
+      }
+
+      window.addEventListener("scroll", updateScrollProgress, {
+        passive: true
+      });
+
+      window.addEventListener("resize", updateScrollProgress);
+
+      updateScrollProgress();
+
+
+      /* --------------------------------
+         DISCLAIMER MODAL
+      -------------------------------- */
+
+      const modal = document.getElementById("disclaimerModal");
+      const openButtons =
+        document.querySelectorAll("[data-open-disclaimer]");
+      const closeButtons =
+        document.querySelectorAll("[data-close-disclaimer]");
+
+      let lastFocusedElement = null;
+
+      function openDisclaimer() {
+        if (!modal) return;
+
+        lastFocusedElement = document.activeElement;
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("modal-open");
+
+        const closeButton = modal.querySelector(".modal-close");
+
+        if (closeButton) {
+          closeButton.focus();
+        }
+      }
+
+      function closeDisclaimer() {
+        if (!modal) return;
+
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("modal-open");
+
+        if (
+          lastFocusedElement &&
+          typeof lastFocusedElement.focus === "function"
+        ) {
+          lastFocusedElement.focus();
+        }
+      }
+
+      openButtons.forEach(function (button) {
+        button.addEventListener("click", openDisclaimer);
+      });
+
+      closeButtons.forEach(function (button) {
+        button.addEventListener("click", closeDisclaimer);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "Escape" &&
+          modal &&
+          modal.classList.contains("is-open")
+        ) {
+          closeDisclaimer();
+        }
+      });
+
+
+      /* --------------------------------
+         SMOOTH INTERNAL NAVIGATION
+      -------------------------------- */
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+
+          const targetId = this.getAttribute("href");
+
+          if (!targetId || targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+
+          if (!target) return;
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+          if (!target.hasAttribute("tabindex")) {
+            target.setAttribute("tabindex", "-1");
+          }
+
+          target.focus({
+            preventScroll: true
+          });
+        });
+      });
+
     });
   </script>
 
